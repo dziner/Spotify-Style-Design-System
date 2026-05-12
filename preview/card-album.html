@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card — Album/Playlist</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .card {
+    background: #181818; padding: 16px; border-radius: 8px;
+    transition: background var(--dur) var(--ease-out);
+    position: relative;
+  }
+  .card.hover { background: #282828; }
+  .art {
+    aspect-ratio: 1/1; border-radius: 6px; margin-bottom: 14px;
+    box-shadow: rgba(0,0,0,.5) 0 4px 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .art-1 { background: linear-gradient(135deg, #f3727f 0%, #ffa42b 100%); }
+  .art-2 { background: linear-gradient(135deg, #539df5 0%, #2a4a8a 100%); }
+  .art-3 { background: linear-gradient(135deg, #1ed760 0%, #0a5c2a 100%); }
+  .title { font-size: 16px; font-weight: 700; line-height: 1.25; margin: 0; }
+  .sub { font-size: 13px; font-weight: 400; color: #b3b3b3; line-height: 1.4; margin: 4px 0 0; }
+  .play-fab {
+    position: absolute; right: 22px; bottom: 78px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #1ed760; color: #000;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: rgba(0,0,0,.5) 0 8px 16px;
+    opacity: 0; transform: translateY(8px);
+    transition: all var(--dur) var(--ease-out);
+  }
+  .card.hover .play-fab { opacity: 1; transform: translateY(0); }
+  .play-fab svg { width: 18px; height: 18px; transform: translateX(1px); }
+</style></head>
+<body>
+  <div class="card">
+    <div class="art art-1"></div>
+    <p class="title">Daily Mix 1</p>
+    <p class="sub">Phoebe Bridgers, Big Thief, Soccer Mommy</p>
+  </div>
+  <div class="card hover">
+    <div class="art art-2"></div>
+    <p class="title">Focus Flow</p>
+    <p class="sub">Lo-fi instrumentals for deep work</p>
+    <div class="play-fab"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.05 3.606 19.93 11.07a1.071 1.071 0 0 1 0 1.86L7.05 20.394A1.071 1.071 0 0 1 5.5 19.464V4.536A1.071 1.071 0 0 1 7.05 3.606z"/></svg></div>
+  </div>
+  <div class="card">
+    <div class="art art-3"></div>
+    <p class="title">Release Radar</p>
+    <p class="sub">Catch all the latest from artists you follow</p>
+  </div>
+</body></html>

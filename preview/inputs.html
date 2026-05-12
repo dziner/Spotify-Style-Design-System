@@ -1,0 +1,43 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 30px 28px; display: flex; flex-direction: column; gap: 18px; justify-content: center; height: 240px; }
+  .lbl { color: var(--text-muted); font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .search {
+    position: relative; width: 100%; max-width: 380px;
+  }
+  .search input {
+    width: 100%; background: #1f1f1f; color: #fff; border: 0;
+    border-radius: 500px; padding: 11px 16px 11px 44px;
+    box-shadow: 0 1px 0 #121212, 0 0 0 1px #7c7c7c inset;
+    font-family: var(--font-ui); font-size: 14px;
+    outline: none;
+  }
+  .search input::placeholder { color: #b3b3b3; }
+  .search input:focus { box-shadow: 0 1px 0 #121212, 0 0 0 2px #fff inset; }
+  .search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: #fff; }
+
+  .text-input {
+    background: transparent; color: #fff; border: 0;
+    border-radius: 4px; padding: 12px 14px;
+    box-shadow: 0 0 0 1px #7c7c7c inset;
+    font-family: var(--font-ui); font-size: 14px;
+    width: 100%; max-width: 380px; outline: none;
+  }
+  .text-input:focus { box-shadow: 0 0 0 2px #fff inset; }
+  .text-input::placeholder { color: #b3b3b3; }
+</style></head>
+<body>
+  <div>
+    <div class="lbl">Search · pill 500px</div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input placeholder="What do you want to play?">
+    </div>
+  </div>
+  <div>
+    <div class="lbl">Text · 4px</div>
+    <input class="text-input" placeholder="Email or username">
+  </div>
+</body></html>

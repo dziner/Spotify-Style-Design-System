@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Colors — Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .card { background: #1a1a1a; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .stripe { height: 6px; border-radius: 999px; }
+  .name { font-size: 13px; font-weight: 700; }
+  .role { font-size: 11px; color: var(--text-muted); }
+  .hex { font-size: 11px; font-weight: 700; font-feature-settings: "tnum"; letter-spacing: 0.04em; }
+</style></head>
+<body>
+  <div class="card">
+    <div class="stripe" style="background:#f3727f"></div>
+    <div class="name" style="color:#f3727f">Negative</div>
+    <div class="role">Errors, destructive</div>
+    <div class="hex" style="color:#f3727f">#F3727F</div>
+  </div>
+  <div class="card">
+    <div class="stripe" style="background:#ffa42b"></div>
+    <div class="name" style="color:#ffa42b">Warning</div>
+    <div class="role">Cautions, limits</div>
+    <div class="hex" style="color:#ffa42b">#FFA42B</div>
+  </div>
+  <div class="card">
+    <div class="stripe" style="background:#539df5"></div>
+    <div class="name" style="color:#539df5">Announcement</div>
+    <div class="role">Info, new feature</div>
+    <div class="hex" style="color:#539df5">#539DF5</div>
+  </div>
+</body></html>

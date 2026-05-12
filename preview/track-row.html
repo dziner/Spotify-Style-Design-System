@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Track Row</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 22px 22px; }
+  .head {
+    display: grid; grid-template-columns: 28px 1fr 200px 60px; gap: 16px;
+    padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.1);
+    font-size: 11px; color: #b3b3b3; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600;
+  }
+  .row {
+    display: grid; grid-template-columns: 28px 1fr 200px 60px; gap: 16px;
+    padding: 8px 12px; border-radius: 4px; align-items: center;
+    color: #b3b3b3;
+  }
+  .row:hover, .row.hover { background: rgba(255,255,255,.06); color: #fff; }
+  .row .num { text-align: right; font-feature-settings: "tnum"; }
+  .row.playing .num { color: #1ed760; }
+  .track { display: flex; gap: 12px; align-items: center; }
+  .cover { width: 40px; height: 40px; border-radius: 4px; flex-shrink: 0; }
+  .cover-1 { background: linear-gradient(135deg, #f3727f, #ffa42b); }
+  .cover-2 { background: linear-gradient(135deg, #539df5, #2a4a8a); }
+  .cover-3 { background: linear-gradient(135deg, #1ed760, #0a5c2a); }
+  .name { font-size: 15px; font-weight: 600; color: #fff; line-height: 1.2; }
+  .artist { font-size: 13px; color: #b3b3b3; line-height: 1.2; margin-top: 2px; }
+  .row.playing .name { color: #1ed760; }
+  .album { font-size: 13px; }
+  .time { font-size: 13px; text-align: right; font-feature-settings: "tnum"; }
+</style></head>
+<body>
+  <div class="head"><div style="text-align:right">#</div><div>Title</div><div>Album</div><div style="text-align:right">⏱</div></div>
+  <div class="row playing"><div class="num">1</div>
+    <div class="track"><div class="cover cover-1"></div><div><div class="name">Punisher</div><div class="artist">Phoebe Bridgers</div></div></div>
+    <div class="album">Punisher</div><div class="time">3:59</div>
+  </div>
+  <div class="row hover"><div class="num">2</div>
+    <div class="track"><div class="cover cover-2"></div><div><div class="name">Not</div><div class="artist">Big Thief</div></div></div>
+    <div class="album">Two Hands</div><div class="time">4:35</div>
+  </div>
+  <div class="row"><div class="num">3</div>
+    <div class="track"><div class="cover cover-3"></div><div><div class="name">circle the drain</div><div class="artist">Soccer Mommy</div></div></div>
+    <div class="album">color theory</div><div class="time">4:53</div>
+  </div>
+</body></html>

@@ -1,0 +1,250 @@
+/* =========================================================================
+   Spotify-Style Design System — Foundations
+   Color tokens + typography tokens + base semantic CSS.
+   Substitution: Manrope (Google Fonts) stands in for Circular/SpotifyMixUI.
+   ========================================================================= */
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('fonts/PretendardVariable.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------------- COLOR — Surface / Background ---------------- */
+  --bg-base:           #121212;  /* deepest page surface */
+  --bg-surface:        #181818;  /* cards, sidebar, dialogs */
+  --bg-elevated:       #1f1f1f;  /* interactive surfaces, buttons */
+  --bg-card:           #252525;  /* elevated card */
+  --bg-card-alt:       #272727;  /* alternate card */
+  --bg-hover:          #282828;  /* card hover surface */
+  --bg-press:          #000000;  /* deeper press surface */
+  --bg-light:          #eeeeee;  /* light-mode rare CTA */
+
+  /* ---------------- COLOR — Text ---------------- */
+  --text-base:         #ffffff;  /* primary */
+  --text-bright:       #fdfdfd;  /* max emphasis */
+  --text-near:         #cbcbcb;  /* slightly brighter secondary */
+  --text-muted:        #b3b3b3;  /* secondary / muted */
+  --text-subdued:      #7c7c7c;  /* outlined borders, very muted links */
+  --text-on-light:     #181818;  /* text on light surfaces */
+
+  /* ---------------- COLOR — Brand / Accent ---------------- */
+  --brand-green:        #1ed760;  /* the Spotify Green */
+  --brand-green-border: #1db954;  /* darker border variant */
+  --brand-green-hover:  #1fdf64;  /* hover */
+  --brand-green-press:  #169c46;  /* active */
+
+  /* ---------------- COLOR — Semantic ---------------- */
+  --semantic-negative:     #f3727f;
+  --semantic-warning:      #ffa42b;
+  --semantic-announcement: #539df5;
+  --semantic-positive:     #1ed760;
+
+  /* ---------------- COLOR — Border / Divider ---------------- */
+  --border-default:    #4d4d4d;  /* button borders on dark */
+  --border-strong:     #7c7c7c;  /* outlined button borders */
+  --border-separator:  rgba(255,255,255,0.10);
+  --border-input-inset: 0 1px 0 rgb(18,18,18), 0 0 0 1px rgb(124,124,124) inset;
+
+  /* ---------------- SHADOW / ELEVATION ---------------- */
+  --shadow-card:    rgba(0,0,0,0.30) 0 8px 8px;
+  --shadow-dialog:  rgba(0,0,0,0.50) 0 8px 24px;
+  --shadow-press:   rgba(0,0,0,0.50) 0 4px 8px;
+
+  /* ---------------- RADIUS ---------------- */
+  --radius-badge:    2px;
+  --radius-sm:       4px;
+  --radius-card:     6px;
+  --radius-md:       8px;
+  --radius-lg:       10px;
+  --radius-xl:       20px;
+  --radius-large-pill: 100px;
+  --radius-pill:     500px;   /* primary pills */
+  --radius-full:     9999px;  /* small navigation pills */
+  --radius-circle:   50%;
+
+  /* ---------------- SPACING (8px base) ---------------- */
+  --sp-px:   1px;
+  --sp-0:    2px;
+  --sp-1:    4px;
+  --sp-2:    8px;
+  --sp-3:    12px;
+  --sp-4:    16px;
+  --sp-5:    20px;
+  --sp-6:    24px;
+  --sp-8:    32px;
+  --sp-10:   40px;
+  --sp-12:   48px;
+  --sp-16:   64px;
+
+  /* ---------------- TYPOGRAPHY — Families ---------------- */
+  --font-title:
+    'Pretendard',
+    'SpotifyMixUITitle',
+    'CircularSp-Arab', 'CircularSp-Hebr', 'CircularSp-Cyrl', 'CircularSp-Grek', 'CircularSp-Deva',
+    'Helvetica Neue', helvetica, arial,
+    'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, 'MS Gothic',
+    sans-serif;
+
+  --font-ui:
+    'Pretendard',
+    'SpotifyMixUI',
+    'CircularSp-Arab', 'CircularSp-Hebr', 'CircularSp-Cyrl', 'CircularSp-Grek', 'CircularSp-Deva',
+    'Helvetica Neue', helvetica, arial,
+    'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, 'MS Gothic',
+    sans-serif;
+
+  /* ---------------- TYPOGRAPHY — Size scale ---------------- */
+  --fs-micro:    10px;
+  --fs-badge:    10.5px;
+  --fs-small:    12px;
+  --fs-button:   14px;
+  --fs-body:     16px;
+  --fs-heading:  18px;
+  --fs-title:    24px;
+
+  /* ---------------- TYPOGRAPHY — Weights ---------------- */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* ---------------- TYPOGRAPHY — Tracking ---------------- */
+  --tracking-button: 0.14px;
+  --tracking-upper:  1.4px;
+  --tracking-upper-wide: 2px;
+
+  /* ---------------- MOTION ---------------- */
+  --ease-out: cubic-bezier(0.3, 0, 0, 1);
+  --dur-fast: 150ms;
+  --dur:      200ms;
+  --dur-slow: 300ms;
+}
+
+/* =========================================================================
+   Base / reset
+   ========================================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-base);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================================
+   Semantic typography classes
+   Use these on real markup; resist styling tags raw.
+   ========================================================================= */
+
+.ds-title {
+  font-family: var(--font-title);
+  font-size: var(--fs-title);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-base);
+}
+
+.ds-heading {
+  font-family: var(--font-ui);
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-semibold);
+  line-height: 1.3;
+  color: var(--text-base);
+}
+
+.ds-body-bold {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--text-base);
+}
+
+.ds-body {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--text-base);
+}
+
+.ds-button-upper {
+  font-family: var(--font-ui);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  letter-spacing: var(--tracking-upper);
+  text-transform: uppercase;
+  color: var(--text-base);
+}
+
+.ds-button {
+  font-family: var(--font-ui);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-button);
+  color: var(--text-base);
+}
+
+.ds-nav {
+  font-family: var(--font-ui);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+}
+.ds-nav.is-active { color: var(--text-base); font-weight: var(--fw-bold); }
+
+.ds-caption-bold {
+  font-family: var(--font-ui);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  line-height: 1.5;
+  color: var(--text-base);
+}
+
+.ds-caption {
+  font-family: var(--font-ui);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+}
+
+.ds-small-bold {
+  font-family: var(--font-ui);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  line-height: 1.5;
+  color: var(--text-base);
+}
+
+.ds-small {
+  font-family: var(--font-ui);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+}
+
+.ds-badge {
+  font-family: var(--font-ui);
+  font-size: var(--fs-badge);
+  font-weight: var(--fw-semibold);
+  line-height: 1.33;
+  text-transform: capitalize;
+  color: var(--text-base);
+}
+
+.ds-micro {
+  font-family: var(--font-ui);
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+}

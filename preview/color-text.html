@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Colors — Text</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px 28px; }
+  .row { display: grid; grid-template-columns: 24px 1fr 90px 90px; gap: 14px; padding: 9px 0; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .row:last-child { border-bottom: 0; }
+  .dot { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+  .name { font-size: 13px; font-weight: 700; }
+  .role { font-size: 12px; color: var(--text-muted); }
+  .hex { font-size: 11px; color: var(--text-subdued); font-feature-settings: "tnum"; text-align: right; }
+</style></head>
+<body>
+  <div class="row"><div class="dot" style="background:#fdfdfd"></div><div class="name" style="color:#fdfdfd">Bright</div><div class="role">max emphasis</div><div class="hex">#FDFDFD</div></div>
+  <div class="row"><div class="dot" style="background:#ffffff"></div><div class="name" style="color:#fff">Base</div><div class="role">primary text</div><div class="hex">#FFFFFF</div></div>
+  <div class="row"><div class="dot" style="background:#cbcbcb"></div><div class="name" style="color:#cbcbcb">Near</div><div class="role">brighter secondary</div><div class="hex">#CBCBCB</div></div>
+  <div class="row"><div class="dot" style="background:#b3b3b3"></div><div class="name" style="color:#b3b3b3">Muted</div><div class="role">secondary, labels</div><div class="hex">#B3B3B3</div></div>
+  <div class="row"><div class="dot" style="background:#7c7c7c"></div><div class="name" style="color:#7c7c7c">Subdued</div><div class="role">muted links, borders</div><div class="hex">#7C7C7C</div></div>
+</body></html>

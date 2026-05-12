@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Brand — Logo</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px 28px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 24px; align-items: center; background: #121212; }
+  .panel { background: #181818; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+  .panel .lbl { color: var(--text-muted); font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 700; }
+  .glyph { width: 88px; height: 88px; }
+  .word { width: 100%; max-width: 320px; }
+  .green-circle {
+    width: 36px; height: 36px; border-radius: 50%; background: #1ed760;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .green-circle svg { width: 20px; height: 20px; color: #000; transform: translateX(1px); }
+  .palette { display: flex; gap: 8px; }
+  .swatch { width: 36px; height: 36px; border-radius: 8px; }
+</style></head>
+<body>
+  <div class="panel">
+    <div class="lbl">Glyph · circle</div>
+    <img class="glyph" src="../assets/logo/spotify-glyph.svg" alt="Spotify glyph">
+  </div>
+  <div class="panel">
+    <div class="lbl">Wordmark</div>
+    <img class="word" src="../assets/logo/spotify-wordmark.svg" alt="Spotify wordmark">
+    <div class="palette">
+      <div class="swatch" style="background:#1ed760"></div>
+      <div class="swatch" style="background:#121212"></div>
+      <div class="swatch" style="background:#fff"></div>
+    </div>
+  </div>
+</body></html>

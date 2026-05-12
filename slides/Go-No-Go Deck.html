@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>SCM Solution — Internal Go/No-Go Deck</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #000; overflow: hidden; height: 100%; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  deck-stage section {
+    width: 1920px; height: 1080px;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+  }
+  deck-stage section > div[id^="s"] {
+    position: absolute; inset: 0;
+  }
+</style>
+</head>
+<body>
+
+<deck-stage>
+  <section data-screen-label="01 Executive Thesis"><div id="s1"></div></section>
+  <section data-screen-label="02 Why This Matters Now"><div id="s2"></div></section>
+  <section data-screen-label="03 What We Already Own"><div id="s3"></div></section>
+  <section data-screen-label="04 What We Can Sell"><div id="s4"></div></section>
+  <section data-screen-label="05 Where The Market Is"><div id="s5"></div></section>
+  <section data-screen-label="06 Why Customers Will Care"><div id="s6"></div></section>
+  <section data-screen-label="07 Productization Boundary"><div id="s7"></div></section>
+  <section data-screen-label="08 Commercial Logic"><div id="s8"></div></section>
+  <section data-screen-label="09 Conditions To Win"><div id="s9"></div></section>
+  <section data-screen-label="10 6-Month Path To First Deal"><div id="s10"></div></section>
+  <section data-screen-label="11 Decision Required"><div id="s11"></div></section>
+  <section data-screen-label="12 Recommendation"><div id="s12"></div></section>
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="shader-bg.jsx"></script>
+<script type="text/babel" src="deck.jsx"></script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Type — Scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 20px 28px; }
+  .row { display: grid; grid-template-columns: 90px 1fr 110px; gap: 16px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--border-separator); }
+  .row:last-child { border-bottom: 0; }
+  .label { color: var(--text-muted); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .specs { color: var(--text-subdued); font-size: 11px; font-feature-settings: "tnum"; text-align: right; }
+</style></head>
+<body>
+  <div class="row"><div class="label">Title</div><div style="font-family: var(--font-title); font-size: 24px; font-weight: 700;">Recently played</div><div class="specs">24 / 700</div></div>
+  <div class="row"><div class="label">Heading</div><div style="font-size: 18px; font-weight: 600; line-height: 1.3;">Your top mixes</div><div class="specs">18 / 600</div></div>
+  <div class="row"><div class="label">Body Bold</div><div style="font-size: 16px; font-weight: 700;">Daily Mix 1</div><div class="specs">16 / 700</div></div>
+  <div class="row"><div class="label">Body</div><div style="font-size: 16px;">Chillstep Music for Programming and Studying</div><div class="specs">16 / 400</div></div>
+  <div class="row"><div class="label">Caption</div><div style="font-size: 14px; color: var(--text-muted);">Song · 3:42 · 4.2M plays</div><div class="specs">14 / 400</div></div>
+  <div class="row"><div class="label">Small</div><div style="font-size: 12px; color: var(--text-muted);">Last played 4 hours ago</div><div class="specs">12 / 400</div></div>
+</body></html>

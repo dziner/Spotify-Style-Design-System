@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Buttons — Secondary</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 30px 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; align-items: center; }
+  .item { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .lbl { color: var(--text-muted); font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 700; }
+  .outlined {
+    background: transparent; color: #fff;
+    border: 1px solid #7c7c7c; border-radius: 9999px;
+    padding: 7px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+  .outlined-wide {
+    background: transparent; color: #fff;
+    border: 1px solid #7c7c7c; border-radius: 9999px;
+    padding: 7px 18px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.4px; cursor: pointer;
+  }
+  .nav-pill {
+    background: #1f1f1f; color: #fff;
+    border: 0; border-radius: 9999px;
+    padding: 7px 14px; font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+  .nav-pill.muted { color: #b3b3b3; background: transparent; }
+  .icon-btn {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(0,0,0,0.7); color: #fff; border: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+  .icon-btn svg { width: 18px; height: 18px; }
+</style></head>
+<body>
+  <div class="item">
+    <div class="lbl">Outlined</div>
+    <button class="outlined">Following</button>
+  </div>
+  <div class="item">
+    <div class="lbl">Outlined · Upper</div>
+    <button class="outlined-wide">Follow</button>
+  </div>
+  <div class="item">
+    <div class="lbl">Nav Pills</div>
+    <div style="display:flex;gap:6px;"><button class="nav-pill">All</button><button class="nav-pill muted">Music</button><button class="nav-pill muted">Podcasts</button></div>
+  </div>
+  <div class="item">
+    <div class="lbl">Icon · Header</div>
+    <button class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+  </div>
+  <div class="item">
+    <div class="lbl">Heart</div>
+    <button class="icon-btn" style="background:transparent; color:#1ed760;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9.1C.6 8.1 2.7 4 6.5 4c2 0 3.6 1 5.5 3 1.9-2 3.5-3 5.5-3 3.8 0 5.9 4.1 4 7.9C19 16.5 12 21 12 21z"/></svg></button>
+  </div>
+  <div class="item">
+    <div class="lbl">Ellipsis</div>
+    <button class="icon-btn" style="background:transparent; color:#b3b3b3;"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></button>
+  </div>
+</body></html>

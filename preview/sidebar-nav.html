@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sidebar Nav</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 0; background: #000; }
+  .root { display: flex; gap: 8px; padding: 8px; height: 320px; }
+  .panel { background: #121212; border-radius: 8px; padding: 16px; }
+  .nav { width: 200px; display: flex; flex-direction: column; gap: 4px; }
+  .item { display: flex; gap: 16px; align-items: center; padding: 6px 8px; color: #b3b3b3; font-size: 15px; font-weight: 700; cursor: pointer; border-radius: 4px; }
+  .item.active { color: #fff; }
+  .item:hover { color: #fff; }
+  .item svg { width: 20px; height: 20px; }
+  .lib { flex: 1; }
+  .libhead { display: flex; align-items: center; justify-content: space-between; padding: 4px 8px 14px; }
+  .libhead .title { color: #b3b3b3; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+  .libhead .plus { color: #b3b3b3; cursor: pointer; }
+  .pl-item { display: flex; gap: 12px; align-items: center; padding: 6px 8px; border-radius: 6px; }
+  .pl-art { width: 44px; height: 44px; border-radius: 4px; background: linear-gradient(135deg, #1ed760, #0a5c2a); flex-shrink: 0; }
+  .pl-art.b { background: linear-gradient(135deg, #f3727f, #ffa42b); }
+  .pl-art.c { background: linear-gradient(135deg, #539df5, #2a4a8a); }
+  .pl-meta .nm { color: #fff; font-size: 14px; font-weight: 400; }
+  .pl-meta .sub { color: #b3b3b3; font-size: 12px; margin-top: 2px; }
+</style></head>
+<body>
+  <div class="root">
+    <div class="panel nav">
+      <div class="item active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21V7l9-4 9 4v14h-7v-7h-4v7H3z"/></svg>Home</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Search</div>
+    </div>
+    <div class="panel lib">
+      <div class="libhead">
+        <div class="title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Your Library</div>
+        <svg class="plus" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="pl-item"><div class="pl-art"></div><div class="pl-meta"><div class="nm">Liked Songs</div><div class="sub">Playlist · 247 songs</div></div></div>
+      <div class="pl-item"><div class="pl-art b"></div><div class="pl-meta"><div class="nm">Daily Mix 1</div><div class="sub">Playlist · Spotify</div></div></div>
+      <div class="pl-item"><div class="pl-art c"></div><div class="pl-meta"><div class="nm">Focus Flow</div><div class="sub">Playlist · Spotify</div></div></div>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Colors — Brand Green</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px 28px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center; height: 240px; }
+  .hero { background: #1ed760; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+  .hero .label { color: #000; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px; }
+  .hero .name { color: #000; font-size: 28px; font-weight: 800; letter-spacing: -0.01em; }
+  .hero .hex { color: rgba(0,0,0,0.7); font-size: 13px; font-weight: 600; font-feature-settings: "tnum"; }
+  .swatches { display: grid; grid-template-rows: repeat(3, 1fr); gap: 8px; height: 100%; }
+  .swatch { border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .swatch .nm { font-size: 12px; font-weight: 700; }
+  .swatch .hx { font-size: 11px; color: rgba(0,0,0,0.65); font-weight: 600; font-feature-settings: "tnum"; }
+  .swatch.dark .hx { color: var(--text-muted); }
+</style></head>
+<body>
+  <div class="hero">
+    <div class="label">Brand Accent</div>
+    <div>
+      <div class="name">Spotify Green</div>
+      <div class="hex">#1ED760</div>
+    </div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#1fdf64; color:#000"><span class="nm">Hover</span><span class="hx">#1FDF64</span></div>
+    <div class="swatch" style="background:#1db954; color:#000"><span class="nm">Border</span><span class="hx">#1DB954</span></div>
+    <div class="swatch dark" style="background:#169c46; color:#fff"><span class="nm">Press</span><span class="hx">#169C46</span></div>
+  </div>
+</body></html>
