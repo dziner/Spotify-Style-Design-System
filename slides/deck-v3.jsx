@@ -139,7 +139,7 @@ function Slide01() {
             </Headline>
           </FadeUp>
           <FadeUp delay={0.7}>
-            <Lede>이번 의사결정의 본질은 신규 개발 착수 여부가 아니라, <strong style={{ color: '#fff' }}>사업 자산으로의 전환 여부</strong>. 아래 두 선택지 중 하나를 오늘 확정해야 한다.</Lede>
+            <Lede>이번 의사결정의 본질은 신규 개발 착수 여부가 아니라, <strong style={{ color: '#fff' }}>사업 자산으로의 전환 여부</strong> · 아래 두 선택지 중 하나를 오늘 확정 필요</Lede>
           </FadeUp>
           <FadeUp delay={1.0}>
             <div style={{ marginTop: 36, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, maxWidth: 980 }}>
@@ -148,7 +148,7 @@ function Slide01() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>의사결정의 본질은 신규 개발이 아니라 <strong>사업 자산 전환 여부</strong>.</MainMsg>
+        <MainMsg>의사결정의 본질은 신규 개발이 아니라 <strong>사업 자산 전환 여부</strong></MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -197,7 +197,7 @@ function Slide02() {
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1080 }}>
           <Eyebrow>타이밍</Eyebrow>
           <Headline size={74}>금융권은 이미 자동화로 가고 있고<br/><span style={{ color: ACCENT }}>통제 레이어 수요는 더 빨라지고 있다</span></Headline>
-          <Lede>지금 필요한 것은 기능 추가가 아니라 승인·감사·보안·운영이 한 화면에서 연결되는 제품형 거버넌스 레이어다.</Lede>
+          <Lede>지금 필요한 것은 기능 추가가 아니라 승인·감사·보안·운영이 한 화면에서 연결되는 제품형 거버넌스 레이어</Lede>
         </div>
         <div style={{ position: 'absolute', top: 470, left: 88, right: 88 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
@@ -209,7 +209,7 @@ function Slide02() {
             <SourceNote>Source: IBM Cost of a Data Breach 2024 Financial Industry · GitLab 2024 Global DevSecOps Report · Google Cloud 2024 State of DevOps</SourceNote>
           </FadeUp>
         </div>
-        <MainMsg>지금은 기능 추가보다 <strong>통제 가능한 개발운영 허브</strong>를 제품으로 고정할 시점.</MainMsg>
+        <MainMsg>지금은 기능 추가보다 <strong>통제 가능한 개발운영 허브</strong>를 제품으로 고정할 시점</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -269,7 +269,7 @@ function Slide03() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>우리는 콘셉트 검토 단계가 아니라 <strong>제품 코어를 정리하는 단계</strong>.</MainMsg>
+        <MainMsg>우리는 콘셉트 검토 단계가 아니라 <strong>제품 코어를 정리하는 단계</strong></MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -329,7 +329,7 @@ function Slide04() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>상품 정의가 명확해야 <strong>영업 메시지와 개발 범위 통제</strong> 가능.</MainMsg>
+        <MainMsg>상품 정의가 명확해야 <strong>영업 메시지와 개발 범위 통제</strong> 가능</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -384,7 +384,7 @@ function Slide05() {
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>시장</Eyebrow>
           <Headline size={62}>제품 기준은 은행급으로 두고<br/><span style={{ color: ACCENT }}>영업 풀은 은행·증권·보험으로 묶는다</span></Headline>
-          <Lede>첫 12개월은 국내 대형 금융사 중 Git 기반 내재화와 폐쇄망 운영 니즈가 강한 고객만 좁게 본다. 핵심은 넓은 TAM이 아닌 첫 3건을 닫을 수 있는 ICP 정의.</Lede>
+          <Lede>첫 12개월은 국내 대형 금융사 중 Git 기반 내재화와 폐쇄망 운영 니즈가 강한 고객만 좁게 집중 · 핵심은 넓은 TAM이 아닌 첫 3건을 닫을 수 있는 ICP 정의</Lede>
         </div>
         <div style={{ position: 'absolute', top: 490, left: 88, right: 88, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           {sectors.map((s, i) => (
@@ -414,7 +414,7 @@ function Slide05() {
             </FadeUp>
           ))}
         </div>
-        <MainMsg>시장 판단의 핵심은 큰 시장이 아니라 <strong>첫 3건을 닫을 수 있는 고객군</strong> 정의.</MainMsg>
+        <MainMsg>시장 판단의 핵심은 큰 시장이 아니라 <strong>첫 3건을 닫을 수 있는 고객군</strong> 정의</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -490,7 +490,7 @@ function Slide06() {
             <SourceNote>DORA 2024: IDP 사용 조직 팀 성과 +10% · GitLab 2024: 응답자 64%가 툴체인 통합 희망</SourceNote>
           </FadeUp>
         </div>
-        <MainMsg>우리가 겨루는 대상은 범용 기능이 아니라 <strong>금융권 운영 현실 적합성</strong>이다.</MainMsg>
+        <MainMsg>우리가 겨루는 대상은 범용 기능이 아니라 <strong>금융권 운영 현실 적합성</strong></MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -532,11 +532,11 @@ function Slide07() {
           <FadeUp delay={1.1}>
             <div style={{ fontSize: 14, color: 'rgba(255,255,255,.6)' }}>
               <strong style={{ color: ACCENT }}>분리 원칙</strong>
-              <span style={{ marginLeft: 16 }}>코어 + 옵션 + 커넥터 + 설정팩 — 네 계층을 절대 섞지 않는다.</span>
+              <span style={{ marginLeft: 16 }}>코어 + 옵션 + 커넥터 + 설정팩 — 4계층 혼합 금지</span>
             </div>
           </FadeUp>
         </div>
-        <MainMsg>핵심 과제는 개발 확대가 아니라 <strong>제품과 프로젝트의 경계 확정</strong>.</MainMsg>
+        <MainMsg>핵심 과제는 개발 확대가 아니라 <strong>제품과 프로젝트의 경계 확정</strong></MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -596,10 +596,10 @@ function Slide08() {
             ))}
           </div>
           <FadeUp delay={1.2}>
-            <SourceNote>Note: 가격은 내부 협의용 가정치. 실제 견적은 고객사 보안 연동 범위와 조직 규모에 따라 변동.</SourceNote>
+            <SourceNote>Note: 가격은 내부 협의용 가정치 · 실제 견적은 고객사 보안 연동 범위와 조직 규모에 따라 변동</SourceNote>
           </FadeUp>
         </div>
-        <MainMsg>핵심은 한 번 파는 UI가 아니라 <strong>반복 판매되는 운영 패키지</strong>를 만드는 것이다.</MainMsg>
+        <MainMsg>핵심은 한 번 파는 UI가 아니라 <strong>반복 판매되는 운영 패키지</strong> 구축</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -631,9 +631,9 @@ function Slide09() {
   const conds = [
     { id: 'C-01', title: 'Product Owner 지정',             consequence: '로드맵 표류 · 영업 메시지 부재',         priority: '필수', pTone: 'green',   timing: '0일차' },
     { id: 'C-02', title: 'Tech Lead 지정',                 consequence: '아키텍처 경계 붕괴 · 포크 확산',          priority: '필수', pTone: 'green',   timing: '0일차' },
-    { id: 'C-03', title: '인증·브랜딩·연동 분리 착수',    consequence: '재정리 비용이 매 고객마다 발생',           priority: '필수', pTone: 'green',   timing: '30일' },
+    { id: 'C-03', title: '인증·브랜딩·연동 분리 착수',    consequence: '고객별 재정리 비용 반복 발생',           priority: '필수', pTone: 'green',   timing: '30일' },
     { id: 'C-04', title: '제품화 원칙 내부 합의',          consequence: '의사결정 충돌 · 단건 구축으로 회귀',       priority: '필수', pTone: 'green',   timing: '30일' },
-    { id: 'C-05', title: '영업·프리세일즈 메시지 병행',   consequence: '제품만 있고 팔 줄 모르는 상태',            priority: '핵심', pTone: 'warn',    timing: '60일' },
+    { id: 'C-05', title: '영업·프리세일즈 메시지 병행',   consequence: '제품 있으나 영업 방법론 부재',            priority: '핵심', pTone: 'warn',    timing: '60일' },
     { id: 'C-06', title: '제품 운영 체계 구축',            consequence: '고객사별 핫픽스 누적',                     priority: '핵심', pTone: 'warn',    timing: '90일' },
   ];
   return (
@@ -663,7 +663,7 @@ function Slide09() {
             </FadeUp>
           ))}
         </div>
-        <MainMsg>조직적 준비 없는 추진은 솔루션 사업이 아니라 <strong>또 하나의 SI 프로젝트</strong>.</MainMsg>
+        <MainMsg>조직적 준비 없는 추진은 솔루션 사업이 아니라 <strong>또 하나의 SI 프로젝트</strong></MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -709,7 +709,7 @@ function Slide10() {
             ))}
           </div>
         </div>
-        <MainMsg>12주 목표는 개발 완료가 아니라 <strong>바로 제안 가능한 데모 패키지</strong> 확보이다.</MainMsg>
+        <MainMsg>12주 목표는 개발 완료가 아니라 <strong>바로 제안 가능한 데모 패키지</strong> 확보</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -743,11 +743,11 @@ function TimelineBar() {
 /* SLIDE 11 — Decision Required · BinaryChoice strips */
 function Slide11() {
   const qs = [
-    { q: '이 자산을 솔루션으로 승격할 것인가',    a: '아니오 · 프로젝트 유지',  b: '예 · 솔루션 승격' },
-    { q: 'GitLab-first 전략을 유지할 것인가',      a: '멀티 SCM 고려',            b: 'GitLab-first 유지' },
-    { q: '금융권 구축형 포지셔닝으로 갈 것인가',   a: '범용 DevOps 진입',         b: '금융권 구축형' },
-    { q: '초기 12주 전담 인력을 투입할 것인가',   a: '대기 · 우선순위 하향',     b: '투입 · 1순위 과제' },
-    { q: 'MVP 범위를 4개 흐름으로 제한할 것인가',  a: '요구사항 계속 수용',        b: '범위 고정 후 확장' },
+    { q: '이 자산을 솔루션으로 승격할지 여부',    a: '아니오 · 프로젝트 유지',  b: '예 · 솔루션 승격' },
+    { q: 'GitLab-first 전략 유지 여부',      a: '멀티 SCM 고려',            b: 'GitLab-first 유지' },
+    { q: '금융권 구축형 포지셔닝 채택 여부',   a: '범용 DevOps 진입',         b: '금융권 구축형' },
+    { q: '초기 12주 전담 인력 투입 여부',   a: '대기 · 우선순위 하향',     b: '투입 · 1순위 과제' },
+    { q: 'MVP 범위 4개 흐름 제한 여부',  a: '요구사항 계속 수용',        b: '범위 고정 후 확장' },
   ];
   return (
     <AutoStage>
@@ -779,11 +779,11 @@ function Slide11() {
           <FadeUp delay={1.2}>
             <div style={{ marginTop: 20, padding: '18px 24px', border: `1px solid ${ACCENT}`, borderRadius: 8, background: ACCENT_SOFT, fontSize: 21, fontWeight: 600, lineHeight: 1.5 }}>
               <span style={{ color: ACCENT, marginRight: 12 }}>핵심 질문 →</span>
-              이 자산을 <strong style={{ color: '#fff' }}>프로젝트 결과물</strong>로 소모할 것인가, 아니면 <strong style={{ color: '#fff' }}>사업 자산</strong>으로 전환할 것인가.
+              이 자산을 <strong style={{ color: '#fff' }}>프로젝트 결과물</strong>로 소모할지, <strong style={{ color: '#fff' }}>사업 자산</strong>으로 전환할지 선택
             </div>
           </FadeUp>
         </div>
-        <MainMsg>오늘 결정해야 할 것은 <strong>추진 여부 + 추진 원칙</strong>의 동시 확정.</MainMsg>
+        <MainMsg>오늘 결정해야 할 것은 <strong>추진 여부 + 추진 원칙</strong>의 동시 확정</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -807,7 +807,7 @@ function DivergePathsMini() {
 /* SLIDE 12 — Recommendation · RecoCards */
 function Slide12() {
   const recos = [
-    { tag: '추진 권고',     title: '자산 → 솔루션 승격',           desc: '이미 확보된 코어와 시장 문맥이 있음', accent: true },
+    { tag: '추진 권고',     title: '자산 → 솔루션 승격',           desc: '이미 확보된 코어와 시장 문맥 존재', accent: true },
     { tag: '12주 MVP',      title: '4개 흐름 · 1개 데모테넌트 · 3~5개 연동으로 제한', desc: '3개월 내 즉시 착수 가능', accent: true },
     { tag: 'GitLab-first', title: '단일 SCM 기준 좁게 시작',       desc: '경계 통제 · 첫 제안 성공확률 우선', accent: false },
     { tag: '온프레미스 우선',title: '구축형 · 망분리 환경 대응',    desc: '금융권 진입 조건의 기준선', accent: false },
@@ -841,7 +841,7 @@ function Slide12() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>권고안은 확장 개발이 아니라 <strong>12주 MVP로 사업화 가능성부터 검증</strong>하는 것이다.</MainMsg>
+        <MainMsg>권고안은 확장 개발이 아니라 <strong>12주 MVP로 사업화 가능성 우선 검증</strong></MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -873,7 +873,7 @@ function Slide13() {
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1060 }}>
           <FadeUp delay={0.1}><Eyebrow>실행 전략</Eyebrow></FadeUp>
           <FadeUp delay={0.3}><Headline size={68}>4개 영역 병렬 착수 ·<br/><span style={{ color: ACCENT }}>의존성 기반 순차 통합</span></Headline></FadeUp>
-          <FadeUp delay={0.6}><Lede>아키텍처 설계, 디자인시스템 수립, 개발 리팩토링, 브랜딩 체계 — 각 영역을 동시에 분석·정의하고 의존 관계 순서에 따라 통합·검증한다.</Lede></FadeUp>
+          <FadeUp delay={0.6}><Lede>아키텍처 설계, 디자인시스템 수립, 개발 리팩토링, 브랜딩 체계 — 각 영역을 동시에 분석·정의하고 의존 관계 순서에 따라 통합·검증</Lede></FadeUp>
           <FadeUp delay={0.9}>
             <div style={{ marginTop: 36, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, maxWidth: 1120 }}>
               {[
@@ -885,7 +885,7 @@ function Slide13() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>4개 실행 영역을 병렬 정의하고 <strong>단계별 통합으로 솔루션화</strong> 달성.</MainMsg>
+        <MainMsg>4개 실행 영역을 병렬 정의하고 <strong>단계별 통합으로 솔루션화</strong> 달성</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -942,7 +942,7 @@ function Slide14() {
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>아키텍처</Eyebrow>
           <Headline size={62}>코어는 불변 · 옵션은 고객별 활성화 —<br/><span style={{ color: ACCENT }}>4계층 분리 구조</span></Headline>
-          <Lede>코어를 건드리지 않고 옵션·커넥터·팩 레이어에서만 고객화가 가능해야 반복 판매 구조가 성립한다.</Lede>
+          <Lede>코어를 건드리지 않고 옵션·커넥터·팩 레이어에서만 고객화가 가능해야 반복 판매 구조 성립의 전제</Lede>
         </div>
         <div style={{ position: 'absolute', top: 460, left: 88, right: 88 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -962,7 +962,7 @@ function Slide14() {
             ))}
           </div>
         </div>
-        <MainMsg>코어 불변 원칙이 지켜질 때만 <strong>반복 판매 구조와 유지보수 효율</strong>이 보장됨.</MainMsg>
+        <MainMsg>코어 불변 원칙이 지켜질 때만 <strong>반복 판매 구조와 유지보수 효율</strong> 보장</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -1065,7 +1065,7 @@ function Slide16() {
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1160 }}>
           <Eyebrow>디자인시스템 · 토큰 파이프라인</Eyebrow>
           <Headline size={60}>Ant 안정화 vs 신규 구축 —<br/><span style={{ color: ACCENT }}>피그마→토큰→코드</span> 핸드오버가 핵심 기준</Headline>
-          <Lede>어느 방향이든 <strong style={{ color: '#fff' }}>Figma Variables → Style Dictionary → CSS 변수 → 고객 토큰 오버라이드</strong> 파이프라인이 안정적으로 작동해야 솔루션화에 의미가 있다.</Lede>
+          <Lede>어느 방향이든 <strong style={{ color: '#fff' }}>Figma Variables → Style Dictionary → CSS 변수 → 고객 토큰 오버라이드</strong> 파이프라인 안정 작동이 솔루션화의 전제 조건</Lede>
         </div>
         <div style={{ position: 'absolute', top: 480, left: 88, right: 88 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '160px 1fr 1fr 80px', gap: 0 }}>
@@ -1085,7 +1085,7 @@ function Slide16() {
             </FadeUp>
           ))}
         </div>
-        <MainMsg>단기 데모는 A, <strong>솔루션 장기 목표는 B</strong> — 병행 검증 후 M2에서 방향 확정.</MainMsg>
+        <MainMsg>단기 데모는 A, <strong>솔루션 장기 목표는 B</strong> — 병행 검증 후 M2에서 방향 확정</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -1161,7 +1161,7 @@ function Slide17() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>리팩토링 후에도 기존 기능 동작을 보장하는 <strong>점진적 전환 전략</strong>이 필수.</MainMsg>
+        <MainMsg>리팩토링 후에도 기존 기능 동작을 보장하는 <strong>점진적 전환 전략</strong> 필수</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -1236,7 +1236,7 @@ function Slide18() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>데모 목표는 기능 과시가 아니라 <strong>"이 흐름이면 우리도 쓸 수 있겠다"는 확신</strong>을 주는 것이다.</MainMsg>
+        <MainMsg>데모 목표는 기능 과시가 아니라 <strong>"이 흐름이면 우리도 쓸 수 있겠다"는 확신</strong> 유도</MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -1297,7 +1297,7 @@ function Slide19() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>컨설팅 논의의 핵심은 <strong>어떤 패키지를 얼마 기간에 어떤 효과로 팔 것인가</strong>다.</MainMsg>
+        <MainMsg>컨설팅 논의의 핵심은 <strong>패키지·기간·효과 기준 판매 전략 확정</strong></MainMsg>
       </SlideShell>
     </AutoStage>
   );
@@ -1366,7 +1366,7 @@ function Slide20() {
             </div>
           </FadeUp>
         </div>
-        <MainMsg>Go 조건은 12주 내 <strong>제안 가능한 MVP</strong>를 만드는 것이고, No-Go 조건은 범위 통제가 무너지는 순간이다.</MainMsg>
+        <MainMsg>Go 조건은 12주 내 <strong>제안 가능한 MVP</strong> 완성 · No-Go 조건은 범위 통제 이탈</MainMsg>
       </SlideShell>
     </AutoStage>
   );
