@@ -63,8 +63,8 @@ function SlideTag({ num, total = 20, label }) {
 function MainMsg({ children }) {
   return (
     <div style={{ position: 'absolute', bottom: 56, left: 88, right: 88, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,.18)', display: 'flex', alignItems: 'center', gap: 24 }}>
-      <span style={{ fontSize: 12, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, whiteSpace: 'nowrap' }}>Main Message</span>
-      <span style={{ fontSize: 19, fontWeight: 500, color: 'rgba(255,255,255,.92)', lineHeight: 1.45 }}>{children}</span>
+      <span style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, whiteSpace: 'nowrap' }}>Main Message</span>
+      <span style={{ fontSize: 22, fontWeight: 500, color: 'rgba(255,255,255,.92)', lineHeight: 1.45 }}>{children}</span>
     </div>
   );
 }
@@ -74,10 +74,10 @@ function FadeUp({ delay = 0, dur = 0.5, children, style }) {
   const e = Easing.easeOutCubic(p);
   return <div style={{ opacity: e, transform: `translateY(${(1-e)*14}px)`, willChange: 'transform,opacity', ...style }}>{children}</div>;
 }
-const Eyebrow = ({ children }) => <div style={{ fontSize: 14, letterSpacing: '0.2em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 18 }}>{children}</div>;
-const Headline = ({ children, size = 48 }) => <div style={{ fontSize: size, fontWeight: 700, lineHeight: 1.18, letterSpacing: '-0.02em', textWrap: 'balance', color: '#fff' }}>{children}</div>;
-const Lede = ({ children }) => <div style={{ marginTop: 18, fontSize: 18, color: 'rgba(255,255,255,.7)', lineHeight: 1.55, maxWidth: 720 }}>{children}</div>;
-const SourceNote = ({ children }) => <div style={{ marginTop: 14, fontSize: 12, color: 'rgba(255,255,255,.4)', lineHeight: 1.5 }}>{children}</div>;
+const Eyebrow = ({ children }) => <div style={{ fontSize: 17, letterSpacing: '0.2em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 20 }}>{children}</div>;
+const Headline = ({ children, size = 56 }) => <div style={{ fontSize: size, fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.02em', textWrap: 'balance', color: '#fff' }}>{children}</div>;
+const Lede = ({ children }) => <div style={{ marginTop: 20, fontSize: 21, color: 'rgba(255,255,255,.7)', lineHeight: 1.5, maxWidth: 820 }}>{children}</div>;
+const SourceNote = ({ children }) => <div style={{ marginTop: 14, fontSize: 13, color: 'rgba(255,255,255,.4)', lineHeight: 1.5 }}>{children}</div>;
 
 /* ─── Shared UI primitives ───────────────────────────────────────────── */
 function Pill({ children, tone = 'neutral', size = 'sm' }) {
@@ -89,31 +89,31 @@ function Pill({ children, tone = 'neutral', size = 'sm' }) {
     dim:     { bg: 'transparent',           bd: 'rgba(255,255,255,.15)',   col: 'rgba(255,255,255,.4)' },
   };
   const c = map[tone] || map.neutral;
-  const fs = size === 'lg' ? 13 : 11;
-  const px = size === 'lg' ? 14 : 9;
-  const py = size === 'lg' ? 7 : 4;
+  const fs = size === 'lg' ? 15 : 12;
+  const px = size === 'lg' ? 16 : 10;
+  const py = size === 'lg' ? 8 : 5;
   return <span style={{ display: 'inline-flex', alignItems: 'center', lineHeight: 1, padding: `${py}px ${px}px`, borderRadius: 999, fontSize: fs, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', background: c.bg, border: `1px solid ${c.bd}`, color: c.col, whiteSpace: 'nowrap' }}>{children}</span>;
 }
 
 function StatCard({ value, label, context, source, accent = false }) {
   return (
     <div style={{ padding: '22px 20px', borderRadius: 12, border: `1px solid ${accent ? ACCENT : 'rgba(255,255,255,.14)'}`, background: accent ? ACCENT_SOFT : 'rgba(255,255,255,.025)', display: 'flex', flexDirection: 'column', gap: 6 }}>
-      <div style={{ fontSize: 40, fontWeight: 700, color: accent ? ACCENT : '#fff', lineHeight: 1, letterSpacing: '-0.03em' }}>{value}</div>
-      <div style={{ fontSize: 13, color: accent ? ACCENT : 'rgba(255,255,255,.8)', fontWeight: 700, lineHeight: 1.3 }}>{label}</div>
-      {context && <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', lineHeight: 1.4 }}>{context}</div>}
-      {source && <div style={{ fontSize: 11, color: 'rgba(255,255,255,.28)', marginTop: 4, letterSpacing: '0.08em' }}>{source}</div>}
+      <div style={{ fontSize: 52, fontWeight: 700, color: accent ? ACCENT : '#fff', lineHeight: 1, letterSpacing: '-0.03em' }}>{value}</div>
+      <div style={{ fontSize: 16, color: accent ? ACCENT : 'rgba(255,255,255,.8)', fontWeight: 700, lineHeight: 1.3 }}>{label}</div>
+      {context && <div style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', lineHeight: 1.4 }}>{context}</div>}
+      {source && <div style={{ fontSize: 12, color: 'rgba(255,255,255,.28)', marginTop: 4, letterSpacing: '0.08em' }}>{source}</div>}
     </div>
   );
 }
 
 function DataTable({ cols, rows }) {
   return (
-    <div style={{ width: '100%', fontSize: 15 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: cols.template, padding: '10px 0', borderBottom: `1px solid ${ACCENT}`, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700 }}>
+    <div style={{ width: '100%', fontSize: 17 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: cols.template, padding: '11px 0', borderBottom: `1px solid ${ACCENT}`, fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700 }}>
         {cols.heads.map((h, i) => <div key={i}>{h}</div>)}
       </div>
       {rows.map((r, i) => (
-        <div key={i} style={{ display: 'grid', gridTemplateColumns: cols.template, padding: '13px 0', borderBottom: '1px solid rgba(255,255,255,.10)', fontSize: 15, color: 'rgba(255,255,255,.92)', lineHeight: 1.4 }}>
+        <div key={i} style={{ display: 'grid', gridTemplateColumns: cols.template, padding: '14px 0', borderBottom: '1px solid rgba(255,255,255,.10)', fontSize: 17, color: 'rgba(255,255,255,.92)', lineHeight: 1.4 }}>
           {r.map((c, j) => <div key={j} style={j === 0 ? { fontWeight: 700, color: '#fff' } : {}}>{c}</div>)}
         </div>
       ))}
@@ -133,7 +133,7 @@ function Slide01() {
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1080 }}>
           <FadeUp delay={0.1}><Eyebrow>본질</Eyebrow></FadeUp>
           <FadeUp delay={0.3}>
-            <Headline size={62}>
+            <Headline size={72}>
               지금 검토할 것은 신규 아이템이 아니라<br/>
               <span style={{ color: ACCENT }}>이미 확보한 금융권형 솔루션 자산</span>
             </Headline>
@@ -161,8 +161,8 @@ function PathCard({ kind, title, desc, tone }) {
         <span style={{ width: 26, height: 26, borderRadius: '50%', background: accent ? ACCENT : 'rgba(255,255,255,.15)', color: accent ? '#000' : '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700 }}>{kind}</span>
         <span style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: accent ? ACCENT : 'rgba(255,255,255,.6)', fontWeight: 700 }}>Option {kind}</span>
       </div>
-      <div style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>{title}</div>
-      <div style={{ fontSize: 14, color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>{desc}</div>
+      <div style={{ fontSize: 26, fontWeight: 700, marginBottom: 8 }}>{title}</div>
+      <div style={{ fontSize: 16, color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>{desc}</div>
     </div>
   );
 }
@@ -196,7 +196,7 @@ function Slide02() {
         <RipplePulse />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1080 }}>
           <Eyebrow>타이밍</Eyebrow>
-          <Headline size={54}>금융권은 이미 자동화로 가고 있고<br/><span style={{ color: ACCENT }}>통제 레이어 수요는 더 빨라지고 있다</span></Headline>
+          <Headline size={74}>금융권은 이미 자동화로 가고 있고<br/><span style={{ color: ACCENT }}>통제 레이어 수요는 더 빨라지고 있다</span></Headline>
           <Lede>지금 필요한 것은 기능 추가가 아니라 승인·감사·보안·운영이 한 화면에서 연결되는 제품형 거버넌스 레이어다.</Lede>
         </div>
         <div style={{ position: 'absolute', top: 470, left: 88, right: 88 }}>
@@ -244,7 +244,7 @@ function Slide03() {
         <AssetGridMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1200 }}>
           <Eyebrow>자산</Eyebrow>
-          <Headline size={54}>출발점은 아이디어가 아니라<br/><span style={{ color: ACCENT }}>이미 구현된 코어 제품 후보</span></Headline>
+          <Headline size={74}>출발점은 아이디어가 아니라<br/><span style={{ color: ACCENT }}>이미 구현된 코어 제품 후보</span></Headline>
         </div>
         <div style={{ position: 'absolute', top: 380, left: 88, right: 88 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
@@ -254,9 +254,9 @@ function Slide03() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <Pill tone={a.tagTone}>{a.tag}</Pill>
                   </div>
-                  <div style={{ fontSize: 17, fontWeight: 700, lineHeight: 1.3, flex: 1 }}>{a.title}</div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,.55)', lineHeight: 1.4 }}>{a.desc}</div>
-                  <div style={{ fontSize: 12, color: ACCENT, fontWeight: 600, letterSpacing: '0.05em' }}>{a.fit}</div>
+                  <div style={{ fontSize: 21, fontWeight: 700, lineHeight: 1.3, flex: 1 }}>{a.title}</div>
+                  <div style={{ fontSize: 15, color: 'rgba(255,255,255,.55)', lineHeight: 1.4 }}>{a.desc}</div>
+                  <div style={{ fontSize: 14, color: ACCENT, fontWeight: 600, letterSpacing: '0.05em' }}>{a.fit}</div>
                 </div>
               </FadeUp>
             ))}
@@ -306,7 +306,7 @@ function Slide04() {
         <CapsuleLayersMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>상품 정의</Eyebrow>
-          <Headline size={52}>판매 대상은 Git UI가 아니라<br/><span style={{ color: ACCENT }}>금융권형 개발운영 통제 플랫폼</span></Headline>
+          <Headline size={62}>판매 대상은 Git UI가 아니라<br/><span style={{ color: ACCENT }}>금융권형 개발운영 통제 플랫폼</span></Headline>
         </div>
         <div style={{ position: 'absolute', top: 380, left: 88, right: 88 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -314,10 +314,10 @@ function Slide04() {
               <FadeUp key={i} delay={0.5 + i * 0.12}>
                 <div style={{ width: l.w, display: 'flex', alignItems: 'center', gap: 0, borderRadius: 8, border: `1px solid ${l.accent ? ACCENT : 'rgba(255,255,255,.12)'}`, background: l.accent ? ACCENT_SOFT : 'rgba(255,255,255,.025)', overflow: 'hidden' }}>
                   <div style={{ width: 120, padding: '14px 18px', flexShrink: 0, borderRight: `1px solid ${l.accent ? ACCENT : 'rgba(255,255,255,.1)'}`, background: l.accent ? 'rgba(30,215,96,.12)' : 'rgba(255,255,255,.03)' }}>
-                    <div style={{ fontSize: 10, letterSpacing: '0.22em', color: l.accent ? ACCENT : 'rgba(255,255,255,.45)', fontWeight: 700 }}>{l.name}</div>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: l.accent ? ACCENT : '#fff', marginTop: 3 }}>{l.label}</div>
+                    <div style={{ fontSize: 12, letterSpacing: '0.22em', color: l.accent ? ACCENT : 'rgba(255,255,255,.45)', fontWeight: 700 }}>{l.name}</div>
+                    <div style={{ fontSize: 20, fontWeight: 700, color: l.accent ? ACCENT : '#fff', marginTop: 3 }}>{l.label}</div>
                   </div>
-                  <div style={{ flex: 1, padding: '14px 20px', fontSize: 14, color: 'rgba(255,255,255,.7)', lineHeight: 1.45 }}>{l.desc}</div>
+                  <div style={{ flex: 1, padding: '14px 20px', fontSize: 16, color: 'rgba(255,255,255,.7)', lineHeight: 1.45 }}>{l.desc}</div>
                   <div style={{ padding: '14px 20px', flexShrink: 0 }}><Pill tone={l.modelTone}>{l.model}</Pill></div>
                 </div>
               </FadeUp>
@@ -383,7 +383,7 @@ function Slide05() {
         <ThreeNodesMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>시장</Eyebrow>
-          <Headline size={52}>제품 기준은 은행급으로 두고<br/><span style={{ color: ACCENT }}>영업 풀은 은행·증권·보험으로 묶는다</span></Headline>
+          <Headline size={62}>제품 기준은 은행급으로 두고<br/><span style={{ color: ACCENT }}>영업 풀은 은행·증권·보험으로 묶는다</span></Headline>
           <Lede>첫 12개월은 국내 대형 금융사 중 Git 기반 내재화와 폐쇄망 운영 니즈가 강한 고객만 좁게 본다. 핵심은 넓은 TAM이 아닌 첫 3건을 닫을 수 있는 ICP 정의.</Lede>
         </div>
         <div style={{ position: 'absolute', top: 490, left: 88, right: 88, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -391,23 +391,23 @@ function Slide05() {
             <FadeUp key={i} delay={0.6 + i * 0.15}>
               <div style={{ padding: '22px 22px', borderRadius: 12, border: `1px solid ${s.highlight ? ACCENT : 'rgba(255,255,255,.15)'}`, background: s.highlight ? ACCENT_SOFT : 'rgba(255,255,255,.025)' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 16 }}>
-                  <span style={{ fontSize: 32, fontWeight: 700, color: s.highlight ? ACCENT : '#fff' }}>{s.name}</span>
+                  <span style={{ fontSize: 40, fontWeight: 700, color: s.highlight ? ACCENT : '#fff' }}>{s.name}</span>
                   <span style={{ fontSize: 11, letterSpacing: '0.22em', color: s.highlight ? ACCENT : 'rgba(255,255,255,.4)', fontWeight: 700 }}>{s.en}</span>
                   <div style={{ marginLeft: 'auto' }}><Pill tone={s.diffTone}>{s.diff}</Pill></div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14 }}>
                   {s.needs.map((n, j) => (
-                    <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, color: 'rgba(255,255,255,.8)' }}>
+                    <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 16, color: 'rgba(255,255,255,.8)' }}>
                       <span style={{ width: 5, height: 5, borderRadius: '50%', background: s.highlight ? ACCENT : 'rgba(255,255,255,.4)', flexShrink: 0 }} />
                       {n}
                     </div>
                   ))}
                 </div>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: 12, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                  <div style={{ fontSize: 13, color: ACCENT, fontWeight: 600 }}>{s.approach}</div>
+                  <div style={{ fontSize: 15, color: ACCENT, fontWeight: 600 }}>{s.approach}</div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: 12, color: 'rgba(255,255,255,.45)' }}>{s.note}</span>
-                    <span style={{ fontSize: 13, color: 'rgba(255,255,255,.6)', fontWeight: 700 }}>타깃 {s.pool}</span>
+                    <span style={{ fontSize: 14, color: 'rgba(255,255,255,.45)' }}>{s.note}</span>
+                    <span style={{ fontSize: 15, color: 'rgba(255,255,255,.6)', fontWeight: 700 }}>타깃 {s.pool}</span>
                   </div>
                 </div>
               </div>
@@ -461,10 +461,10 @@ function Slide06() {
         <ControlShieldMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>차별 포인트</Eyebrow>
-          <Headline size={52}>고객이 사는 것은 UI가 아니라<br/><span style={{ color: ACCENT }}>감사 가능한 운영 흐름</span></Headline>
+          <Headline size={62}>고객이 사는 것은 UI가 아니라<br/><span style={{ color: ACCENT }}>감사 가능한 운영 흐름</span></Headline>
         </div>
         <div style={{ position: 'absolute', top: 380, left: 88, right: 88 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 10, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 10, fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>
             <div style={{ flex: '0 0 320px', color: 'rgba(255,80,80,.7)' }}>고객 페인포인트</div>
             <div style={{ flex: '0 0 28px' }} />
             <div style={{ flex: '0 0 320px', color: 'rgba(255,255,255,.4)' }}>범용 DevOps 한계</div>
@@ -474,15 +474,15 @@ function Slide06() {
           {rows.map((r, i) => (
             <FadeUp key={i} delay={0.5 + i * 0.12}>
               <div style={{ display: 'flex', alignItems: 'stretch', gap: 0, marginBottom: 8 }}>
-                <div style={{ flex: '0 0 320px', padding: '12px 16px', borderRadius: '8px 0 0 8px', border: '1px solid rgba(255,80,80,.25)', borderRight: 'none', background: 'rgba(255,70,70,.06)', fontSize: 15, fontWeight: 600, color: '#fff', display: 'flex', alignItems: 'center' }}>{r.pain}</div>
+                <div style={{ flex: '0 0 320px', padding: '12px 16px', borderRadius: '8px 0 0 8px', border: '1px solid rgba(255,80,80,.25)', borderRight: 'none', background: 'rgba(255,70,70,.06)', fontSize: 17, fontWeight: 600, color: '#fff', display: 'flex', alignItems: 'center' }}>{r.pain}</div>
                 <div style={{ flex: '0 0 28px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,.04)', borderTop: '1px solid rgba(255,255,255,.08)', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
                   <span style={{ fontSize: 14, color: 'rgba(255,255,255,.25)' }}>→</span>
                 </div>
-                <div style={{ flex: '0 0 320px', padding: '12px 16px', border: '1px solid rgba(255,255,255,.1)', borderLeft: 'none', borderRight: 'none', background: 'rgba(255,255,255,.025)', fontSize: 14, color: 'rgba(255,255,255,.5)', display: 'flex', alignItems: 'center' }}>{r.limit}</div>
+                <div style={{ flex: '0 0 320px', padding: '12px 16px', border: '1px solid rgba(255,255,255,.1)', borderLeft: 'none', borderRight: 'none', background: 'rgba(255,255,255,.025)', fontSize: 16, color: 'rgba(255,255,255,.5)', display: 'flex', alignItems: 'center' }}>{r.limit}</div>
                 <div style={{ flex: '0 0 28px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: ACCENT_SOFT, borderTop: `1px solid ${ACCENT}`, borderBottom: `1px solid ${ACCENT}`, opacity: 0.7 }}>
                   <span style={{ fontSize: 14, color: ACCENT }}>→</span>
                 </div>
-                <div style={{ flex: 1, padding: '12px 16px', borderRadius: '0 8px 8px 0', border: `1px solid ${ACCENT}`, borderLeft: 'none', background: ACCENT_SOFT, fontSize: 15, fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center' }}>{r.solution}</div>
+                <div style={{ flex: 1, padding: '12px 16px', borderRadius: '0 8px 8px 0', border: `1px solid ${ACCENT}`, borderLeft: 'none', background: ACCENT_SOFT, fontSize: 17, fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center' }}>{r.solution}</div>
               </div>
             </FadeUp>
           ))}
@@ -521,7 +521,7 @@ function Slide07() {
         <SlideTag num={7} label="Productization Boundary" />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1280 }}>
           <Eyebrow>경계</Eyebrow>
-          <Headline size={50}>성공은 기능 수가 아니라<br/><span style={{ color: ACCENT }}>제품 경계 통제 역량</span>이 결정한다</Headline>
+          <Headline size={60}>성공은 기능 수가 아니라<br/><span style={{ color: ACCENT }}>제품 경계 통제 역량</span>이 결정한다</Headline>
         </div>
         <div style={{ position: 'absolute', top: 380, left: 88, right: 88, display: 'grid', gridTemplateColumns: '1.1fr 1.1fr 1fr', gap: 24 }}>
           <FadeUp delay={0.5}><BoundaryCol tone="accent" head="INSIDE · 그대로 활용" items={['GitLab 형상관리 UI', 'MR · 브랜치 · 커밋 · 파이프라인 관리자', '운영자/승인자 워크플로']} /></FadeUp>
@@ -546,9 +546,9 @@ function BoundaryCol({ tone, head, items }) {
   const bg = tone==='accent'?ACCENT_SOFT:tone==='warn'?'rgba(255,164,43,.06)':'rgba(255,255,255,.03)';
   return (
     <div style={{ padding: 24, border: `1px solid ${c}`, borderRadius: 8, background: bg, minHeight: 280 }}>
-      <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: c, fontWeight: 700, marginBottom: 16 }}>{head}</div>
+      <div style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: c, fontWeight: 700, marginBottom: 16 }}>{head}</div>
       {items.map((it, i) => (
-        <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderTop: i===0?'1px solid rgba(255,255,255,.1)':'1px solid rgba(255,255,255,.06)', fontSize: 17, fontWeight: 600, lineHeight: 1.4 }}>
+        <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderTop: i===0?'1px solid rgba(255,255,255,.1)':'1px solid rgba(255,255,255,.06)', fontSize: 20, fontWeight: 600, lineHeight: 1.4 }}>
           <span style={{ color: c, fontSize: 12, marginTop: 4, flexShrink: 0 }}>0{i+1}</span>
           <span>{it}</span>
         </div>
@@ -573,7 +573,7 @@ function Slide08() {
         <RecurringPulseMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>수익 구조</Eyebrow>
-          <Headline size={52}>SI 단건 매출을<br/><span style={{ color: ACCENT }}>패키지+구축+MA 구조</span>로 바꿀 수 있다</Headline>
+          <Headline size={62}>SI 단건 매출을<br/><span style={{ color: ACCENT }}>패키지+구축+MA 구조</span>로 바꿀 수 있다</Headline>
         </div>
         <div style={{ position: 'absolute', top: 400, left: 88, right: 88 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 14 }}>
@@ -581,15 +581,15 @@ function Slide08() {
               <FadeUp key={i} delay={0.5 + i * 0.1}>
                 <div style={{ padding: '20px 18px', borderRadius: 12, border: `1px solid ${p.tone==='green'?ACCENT:'rgba(255,255,255,.14)'}`, background: p.tone==='green'?ACCENT_SOFT:'rgba(255,255,255,.025)', display: 'flex', flexDirection: 'column', gap: 8, minHeight: 220 }}>
                   <div>
-                    <div style={{ fontSize: 11, letterSpacing: '0.18em', color: p.tone==='green'?ACCENT:'rgba(255,255,255,.4)', fontWeight: 700, textTransform: 'uppercase' }}>{p.name}</div>
-                    <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginTop: 2 }}>{p.sub}</div>
+                    <div style={{ fontSize: 12, letterSpacing: '0.18em', color: p.tone==='green'?ACCENT:'rgba(255,255,255,.4)', fontWeight: 700, textTransform: 'uppercase' }}>{p.name}</div>
+                    <div style={{ fontSize: 19, fontWeight: 700, color: '#fff', marginTop: 2 }}>{p.sub}</div>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 26, fontWeight: 700, color: p.tone==='green'?ACCENT:'#fff', lineHeight: 1, letterSpacing: '-0.02em' }}>{p.price}</div>
-                    {p.unit && <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{p.unit} · {p.dur}</div>}
-                    {!p.unit && <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{p.dur}</div>}
+                    <div style={{ fontSize: 34, fontWeight: 700, color: p.tone==='green'?ACCENT:'#fff', lineHeight: 1, letterSpacing: '-0.02em' }}>{p.price}</div>
+                    {p.unit && <div style={{ fontSize: 14, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{p.unit} · {p.dur}</div>}
+                    {!p.unit && <div style={{ fontSize: 14, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{p.dur}</div>}
                   </div>
-                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,.55)', lineHeight: 1.4 }}>{p.desc}</div>
+                  <div style={{ fontSize: 14, color: 'rgba(255,255,255,.55)', lineHeight: 1.4 }}>{p.desc}</div>
                   <Pill tone={p.tone==='green'?'green':'dim'}>{p.model}</Pill>
                 </div>
               </FadeUp>
@@ -642,7 +642,7 @@ function Slide09() {
         <SlideTag num={9} label="Conditions To Win" />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1280 }}>
           <Eyebrow>조건</Eyebrow>
-          <Headline size={50}>추진 여부보다 중요한 것은<br/><span style={{ color: ACCENT }}>어떤 조건으로 추진할 것인가</span></Headline>
+          <Headline size={60}>추진 여부보다 중요한 것은<br/><span style={{ color: ACCENT }}>어떤 조건으로 추진할 것인가</span></Headline>
         </div>
         <div style={{ position: 'absolute', top: 360, left: 88, right: 88, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
           {conds.map((c, i) => (
@@ -655,8 +655,8 @@ function Slide09() {
                     <Pill tone="dim">{c.timing}</Pill>
                   </div>
                 </div>
-                <div style={{ fontSize: 18, fontWeight: 700, lineHeight: 1.3, marginBottom: 10 }}>{c.title}</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', lineHeight: 1.45 }}>
+                <div style={{ fontSize: 22, fontWeight: 700, lineHeight: 1.3, marginBottom: 10 }}>{c.title}</div>
+                <div style={{ fontSize: 15, color: 'rgba(255,255,255,.5)', lineHeight: 1.45 }}>
                   <span style={{ color: 'rgba(255,100,100,.7)', fontWeight: 600 }}>없을 시 → </span>{c.consequence}
                 </div>
               </div>
@@ -685,7 +685,7 @@ function Slide10() {
         <SlideTag num={10} label="12-Week Path To First Demo-Sell" />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1380 }}>
           <Eyebrow>로드맵</Eyebrow>
-          <Headline size={50}>3개월 안에 완제품이 아니라<br/><span style={{ color: ACCENT }}>3개월 안에 바로 설명·시연·제안 가능한 형태</span></Headline>
+          <Headline size={60}>3개월 안에 완제품이 아니라<br/><span style={{ color: ACCENT }}>3개월 안에 바로 설명·시연·제안 가능한 형태</span></Headline>
         </div>
         <TimelineBar />
         <div style={{ position: 'absolute', top: 480, left: 88, right: 88 }}>
@@ -693,10 +693,10 @@ function Slide10() {
             {phases.map((p, i) => (
               <FadeUp key={i} delay={0.8 + i * 0.1}>
                 <div style={{ padding: '16px 14px', borderRadius: 8, border: `1px solid ${i===0?ACCENT:'rgba(255,255,255,.12)'}`, background: i===0?ACCENT_SOFT:'rgba(255,255,255,.025)' }}>
-                  <div style={{ fontSize: 11, color: ACCENT, fontWeight: 700, letterSpacing: '0.18em', marginBottom: 6 }}>{p.span}</div>
-                  <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 10 }}>{p.name}</div>
+                  <div style={{ fontSize: 13, color: ACCENT, fontWeight: 700, letterSpacing: '0.18em', marginBottom: 6 }}>{p.span}</div>
+                  <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 10 }}>{p.name}</div>
                   {p.items.map((item, j) => (
-                    <div key={j} style={{ display: 'flex', gap: 6, fontSize: 12, color: 'rgba(255,255,255,.6)', lineHeight: 1.4, marginBottom: 4 }}>
+                    <div key={j} style={{ display: 'flex', gap: 6, fontSize: 14, color: 'rgba(255,255,255,.6)', lineHeight: 1.4, marginBottom: 4 }}>
                       <span style={{ color: 'rgba(255,255,255,.25)', flexShrink: 0 }}>·</span>
                       {item}
                     </div>
@@ -756,20 +756,20 @@ function Slide11() {
         <DivergePathsMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>오늘의 결정</Eyebrow>
-          <Headline size={48}>오늘 필요한 판단은<br/><span style={{ color: ACCENT }}>추진 여부와 추진 원칙의 동시 확정</span></Headline>
+          <Headline size={68}>오늘 필요한 판단은<br/><span style={{ color: ACCENT }}>추진 여부와 추진 원칙의 동시 확정</span></Headline>
         </div>
         <div style={{ position: 'absolute', top: 380, left: 88, right: 88 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {qs.map((q, i) => (
               <FadeUp key={i} delay={0.4 + i * 0.12}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px 280px', gap: 0, alignItems: 'stretch', borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(255,255,255,.12)' }}>
-                  <div style={{ padding: '13px 18px', background: 'rgba(255,255,255,.03)', fontSize: 16, fontWeight: 600, display: 'flex', alignItems: 'center' }}>
+                  <div style={{ padding: '13px 18px', background: 'rgba(255,255,255,.03)', fontSize: 19, fontWeight: 600, display: 'flex', alignItems: 'center' }}>
                     <span style={{ color: ACCENT, marginRight: 12, fontSize: 12, letterSpacing: '0.18em', fontWeight: 700 }}>Q{i+1}</span>{q.q}
                   </div>
-                  <div style={{ padding: '13px 16px', background: 'rgba(255,255,255,.04)', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 14, color: 'rgba(255,255,255,.45)', display: 'flex', alignItems: 'center' }}>
+                  <div style={{ padding: '13px 16px', background: 'rgba(255,255,255,.04)', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 17, color: 'rgba(255,255,255,.45)', display: 'flex', alignItems: 'center' }}>
                     <span style={{ marginRight: 8, opacity: 0.5 }}>A</span>{q.a}
                   </div>
-                  <div style={{ padding: '13px 16px', background: ACCENT_SOFT, borderLeft: `1px solid ${ACCENT}`, fontSize: 14, fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center' }}>
+                  <div style={{ padding: '13px 16px', background: ACCENT_SOFT, borderLeft: `1px solid ${ACCENT}`, fontSize: 17, fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center' }}>
                     <span style={{ marginRight: 8, color: ACCENT }}>B ★</span>{q.b}
                   </div>
                 </div>
@@ -777,7 +777,7 @@ function Slide11() {
             ))}
           </div>
           <FadeUp delay={1.2}>
-            <div style={{ marginTop: 20, padding: '18px 24px', border: `1px solid ${ACCENT}`, borderRadius: 8, background: ACCENT_SOFT, fontSize: 18, fontWeight: 600, lineHeight: 1.5 }}>
+            <div style={{ marginTop: 20, padding: '18px 24px', border: `1px solid ${ACCENT}`, borderRadius: 8, background: ACCENT_SOFT, fontSize: 21, fontWeight: 600, lineHeight: 1.5 }}>
               <span style={{ color: ACCENT, marginRight: 12 }}>핵심 질문 →</span>
               이 자산을 <strong style={{ color: '#fff' }}>프로젝트 결과물</strong>로 소모할 것인가, 아니면 <strong style={{ color: '#fff' }}>사업 자산</strong>으로 전환할 것인가.
             </div>
@@ -820,7 +820,7 @@ function Slide12() {
         <ForwardArrowMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1300 }}>
           <Eyebrow>권고</Eyebrow>
-          <Headline size={62}><span style={{ color: ACCENT }}>추진</span> · 단, 금융권 GitLab 운영<br/>고도화 솔루션으로 <span style={{ color: ACCENT }}>12주 MVP부터 좁게 시작</span></Headline>
+          <Headline size={72}><span style={{ color: ACCENT }}>추진</span> · 단, 금융권 GitLab 운영<br/>고도화 솔루션으로 <span style={{ color: ACCENT }}>12주 MVP부터 좁게 시작</span></Headline>
         </div>
         <div style={{ position: 'absolute', top: 430, left: 88, right: 88 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 14 }}>
@@ -828,8 +828,8 @@ function Slide12() {
               <FadeUp key={i} delay={0.5 + i * 0.1}>
                 <div style={{ padding: '20px 18px', borderRadius: 10, border: `1px solid ${r.accent?ACCENT:'rgba(255,255,255,.14)'}`, background: r.accent?ACCENT_SOFT:'rgba(255,255,255,.025)', display: 'flex', flexDirection: 'column', gap: 10, minHeight: 180 }}>
                   <Pill tone={r.accent?'green':'neutral'}>{r.tag}</Pill>
-                  <div style={{ fontSize: 17, fontWeight: 700, lineHeight: 1.3, flex: 1 }}>{r.title}</div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,.55)', lineHeight: 1.4 }}>{r.desc}</div>
+                  <div style={{ fontSize: 21, fontWeight: 700, lineHeight: 1.3, flex: 1 }}>{r.title}</div>
+                  <div style={{ fontSize: 15, color: 'rgba(255,255,255,.55)', lineHeight: 1.4 }}>{r.desc}</div>
                 </div>
               </FadeUp>
             ))}
@@ -837,7 +837,7 @@ function Slide12() {
           <FadeUp delay={1.2}>
             <div style={{ marginTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '18px 24px', border: `1px solid ${ACCENT}`, borderRadius: 8, background: ACCENT_SOFT }}>
               <span style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700 }}>Final Message</span>
-              <span style={{ fontSize: 18, fontWeight: 600, color: '#fff' }}>대규모 신사업이 아니라 · <strong>이미 가진 자산을 12주 내 판매 가능한 형태로 재조직</strong></span>
+              <span style={{ fontSize: 21, fontWeight: 600, color: '#fff' }}>대규모 신사업이 아니라 · <strong>이미 가진 자산을 12주 내 판매 가능한 형태로 재조직</strong></span>
             </div>
           </FadeUp>
         </div>
@@ -872,7 +872,7 @@ function Slide13() {
         <FourLayersMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1060 }}>
           <FadeUp delay={0.1}><Eyebrow>실행 전략</Eyebrow></FadeUp>
-          <FadeUp delay={0.3}><Headline size={58}>4개 영역 병렬 착수 ·<br/><span style={{ color: ACCENT }}>의존성 기반 순차 통합</span></Headline></FadeUp>
+          <FadeUp delay={0.3}><Headline size={68}>4개 영역 병렬 착수 ·<br/><span style={{ color: ACCENT }}>의존성 기반 순차 통합</span></Headline></FadeUp>
           <FadeUp delay={0.6}><Lede>아키텍처 설계, 디자인시스템 수립, 개발 리팩토링, 브랜딩 체계 — 각 영역을 동시에 분석·정의하고 의존 관계 순서에 따라 통합·검증한다.</Lede></FadeUp>
           <FadeUp delay={0.9}>
             <div style={{ marginTop: 36, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, maxWidth: 1120 }}>
@@ -895,10 +895,10 @@ function DomainCard({ tag, sub, label, desc }) {
     <div style={{ padding: '22px 20px', borderRadius: 10, border: '1px solid rgba(255,255,255,.2)', background: 'rgba(255,255,255,.03)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
         <span style={{ width: 28, height: 28, borderRadius: '50%', background: ACCENT_SOFT, border: `1px solid ${ACCENT}`, color: ACCENT, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700 }}>{tag}</span>
-        <span style={{ fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700 }}>{sub}</span>
+        <span style={{ fontSize: 12, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700 }}>{sub}</span>
       </div>
-      <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>{label}</div>
-      <div style={{ fontSize: 13, color: 'rgba(255,255,255,.6)', lineHeight: 1.5 }}>{desc}</div>
+      <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 8 }}>{label}</div>
+      <div style={{ fontSize: 15, color: 'rgba(255,255,255,.6)', lineHeight: 1.5 }}>{desc}</div>
     </div>
   );
 }
@@ -941,7 +941,7 @@ function Slide14() {
         <CoreRingsMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1100 }}>
           <Eyebrow>아키텍처</Eyebrow>
-          <Headline size={52}>코어는 불변 · 옵션은 고객별 활성화 —<br/><span style={{ color: ACCENT }}>4계층 분리 구조</span></Headline>
+          <Headline size={62}>코어는 불변 · 옵션은 고객별 활성화 —<br/><span style={{ color: ACCENT }}>4계층 분리 구조</span></Headline>
           <Lede>코어를 건드리지 않고 옵션·커넥터·팩 레이어에서만 고객화가 가능해야 반복 판매 구조가 성립한다.</Lede>
         </div>
         <div style={{ position: 'absolute', top: 460, left: 88, right: 88 }}>
@@ -949,14 +949,14 @@ function Slide14() {
             {layers.map((l, i) => (
               <FadeUp key={i} delay={0.6 + i * 0.12}>
                 <div style={{ display: 'grid', gridTemplateColumns: '100px 1fr 180px 180px', alignItems: 'center', gap: 0, borderRadius: 8, border: `1px solid ${i===0?ACCENT:'rgba(255,255,255,.1)'}`, background: l.bg, overflow: 'hidden' }}>
-                  <div style={{ padding: '14px 16px', borderRight: `1px solid ${i===0?ACCENT:'rgba(255,255,255,.1)'}`, fontSize: 11, fontWeight: 700, letterSpacing: '0.22em', color: l.color, background: i===0?'rgba(30,215,96,.08)':'rgba(0,0,0,.2)' }}>{l.name}</div>
+                  <div style={{ padding: '14px 16px', borderRight: `1px solid ${i===0?ACCENT:'rgba(255,255,255,.1)'}`, fontSize: 13, fontWeight: 700, letterSpacing: '0.22em', color: l.color, background: i===0?'rgba(30,215,96,.08)':'rgba(0,0,0,.2)' }}>{l.name}</div>
                   <div style={{ padding: '14px 18px', display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                     {l.components.map((c, j) => (
-                      <span key={j} style={{ fontSize: 13, padding: '3px 10px', borderRadius: 999, background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', color: 'rgba(255,255,255,.8)' }}>{c}</span>
+                      <span key={j} style={{ fontSize: 15, padding: '4px 12px', borderRadius: 999, background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', color: 'rgba(255,255,255,.8)' }}>{c}</span>
                     ))}
                   </div>
-                  <div style={{ padding: '14px 14px', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 13, color: 'rgba(255,255,255,.55)' }}>{l.change}</div>
-                  <div style={{ padding: '14px 14px', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 13, color: i===0?ACCENT:'rgba(255,255,255,.55)', fontWeight: i===0?700:400 }}>{l.reuse}</div>
+                  <div style={{ padding: '14px 14px', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 15, color: 'rgba(255,255,255,.55)' }}>{l.change}</div>
+                  <div style={{ padding: '14px 14px', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 15, color: i===0?ACCENT:'rgba(255,255,255,.55)', fontWeight: i===0?700:400 }}>{l.reuse}</div>
                 </div>
               </FadeUp>
             ))}
@@ -1007,7 +1007,7 @@ function Slide15() {
         <MenuDotsMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1200 }}>
           <Eyebrow>IA · 메뉴 구조</Eyebrow>
-          <Headline size={52}>신한 특화 IA에서 <span style={{ color: ACCENT }}>범용 메뉴 풀</span>로 —<br/>고객이 서브셋을 선택·활성화</Headline>
+          <Headline size={62}>신한 특화 IA에서 <span style={{ color: ACCENT }}>범용 메뉴 풀</span>로 —<br/>고객이 서브셋을 선택·활성화</Headline>
         </div>
         <div style={{ position: 'absolute', top: 390, left: 88, right: 88, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
           {cats.map((c, i) => (
@@ -1015,12 +1015,12 @@ function Slide15() {
               <div style={{ padding: '18px 20px', borderRadius: 10, border: `1px solid ${c.core ? ACCENT : 'rgba(255,255,255,.14)'}`, background: c.core ? ACCENT_SOFT : 'rgba(255,255,255,.025)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
                   <span style={{ fontSize: 20, lineHeight: 1 }}>{c.icon}</span>
-                  <span style={{ fontSize: 17, fontWeight: 700, color: c.core ? ACCENT : '#fff' }}>{c.name}</span>
+                  <span style={{ fontSize: 20, fontWeight: 700, color: c.core ? ACCENT : '#fff' }}>{c.name}</span>
                   <div style={{ marginLeft: 'auto' }}><Pill tone={c.core ? 'green' : 'dim'}>{c.core ? '코어 포함' : '고객 선택'}</Pill></div>
                 </div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                   {c.items.map((item, j) => (
-                    <span key={j} style={{ fontSize: 12, padding: '3px 9px', borderRadius: 999, background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', color: 'rgba(255,255,255,.7)' }}>{item}</span>
+                    <span key={j} style={{ fontSize: 14, padding: '4px 11px', borderRadius: 999, background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', color: 'rgba(255,255,255,.7)' }}>{item}</span>
                   ))}
                 </div>
               </div>
@@ -1064,23 +1064,23 @@ function Slide16() {
         <TokenFlowMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1160 }}>
           <Eyebrow>디자인시스템 · 토큰 파이프라인</Eyebrow>
-          <Headline size={50}>Ant 안정화 vs 신규 구축 —<br/><span style={{ color: ACCENT }}>피그마→토큰→코드</span> 핸드오버가 핵심 기준</Headline>
+          <Headline size={60}>Ant 안정화 vs 신규 구축 —<br/><span style={{ color: ACCENT }}>피그마→토큰→코드</span> 핸드오버가 핵심 기준</Headline>
           <Lede>어느 방향이든 <strong style={{ color: '#fff' }}>Figma Variables → Style Dictionary → CSS 변수 → 고객 토큰 오버라이드</strong> 파이프라인이 안정적으로 작동해야 솔루션화에 의미가 있다.</Lede>
         </div>
         <div style={{ position: 'absolute', top: 480, left: 88, right: 88 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '160px 1fr 1fr 80px', gap: 0 }}>
-            <div style={{ padding: '10px 0', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)', fontWeight: 700 }}>평가 기준</div>
-            <div style={{ padding: '10px 16px', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,.55)', fontWeight: 700, background: 'rgba(255,255,255,.03)', borderRadius: '8px 0 0 0', border: '1px solid rgba(255,255,255,.1)', borderRight: 'none', borderBottom: 'none' }}>A — Ant Design 안정화</div>
-            <div style={{ padding: '10px 16px', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, background: ACCENT_SOFT, borderRadius: '0 8px 0 0', border: `1px solid ${ACCENT}`, borderLeft: 'none', borderBottom: 'none' }}>B — 신규 디자인시스템</div>
+            <div style={{ padding: '10px 0', fontSize: 13, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)', fontWeight: 700 }}>평가 기준</div>
+            <div style={{ padding: '10px 16px', fontSize: 13, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,.55)', fontWeight: 700, background: 'rgba(255,255,255,.03)', borderRadius: '8px 0 0 0', border: '1px solid rgba(255,255,255,.1)', borderRight: 'none', borderBottom: 'none' }}>A — Ant Design 안정화</div>
+            <div style={{ padding: '10px 16px', fontSize: 13, letterSpacing: '0.18em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, background: ACCENT_SOFT, borderRadius: '0 8px 0 0', border: `1px solid ${ACCENT}`, borderLeft: 'none', borderBottom: 'none' }}>B — 신규 디자인시스템</div>
             <div style={{ padding: '10px 0 10px 16px', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)', fontWeight: 700 }}>권고</div>
           </div>
           {criteria.map((c, i) => (
             <FadeUp key={i} delay={0.6 + i * 0.1}>
               <div style={{ display: 'grid', gridTemplateColumns: '160px 1fr 1fr 80px', gap: 0 }}>
-                <div style={{ padding: '12px 0', fontSize: 14, fontWeight: 700, color: '#fff', borderBottom: '1px solid rgba(255,255,255,.08)', display: 'flex', alignItems: 'center' }}>{c.label}</div>
-                <div style={{ padding: '12px 16px', fontSize: 14, color: c.pick==='A'?'#fff':'rgba(255,255,255,.45)', fontWeight: c.pick==='A'?600:400, background: 'rgba(255,255,255,.02)', border: '1px solid rgba(255,255,255,.08)', borderRight: 'none', borderTop: 'none', display: 'flex', alignItems: 'center' }}>{c.a}</div>
-                <div style={{ padding: '12px 16px', fontSize: 14, color: c.pick==='B'?ACCENT:'rgba(255,255,255,.45)', fontWeight: c.pick==='B'?700:400, background: c.pick==='B'?ACCENT_SOFT:'rgba(255,255,255,.02)', border: `1px solid ${c.pick==='B'?ACCENT:'rgba(255,255,255,.08)'}`, borderLeft: 'none', borderTop: 'none', display: 'flex', alignItems: 'center' }}>{c.b}</div>
-                <div style={{ padding: '12px 16px', fontSize: 16, fontWeight: 700, color: c.pick==='B'?ACCENT:'rgba(255,255,255,.7)', borderBottom: '1px solid rgba(255,255,255,.08)', display: 'flex', alignItems: 'center' }}>{c.pick}</div>
+                <div style={{ padding: '12px 0', fontSize: 17, fontWeight: 700, color: '#fff', borderBottom: '1px solid rgba(255,255,255,.08)', display: 'flex', alignItems: 'center' }}>{c.label}</div>
+                <div style={{ padding: '12px 16px', fontSize: 16, color: c.pick==='A'?'#fff':'rgba(255,255,255,.45)', fontWeight: c.pick==='A'?600:400, background: 'rgba(255,255,255,.02)', border: '1px solid rgba(255,255,255,.08)', borderRight: 'none', borderTop: 'none', display: 'flex', alignItems: 'center' }}>{c.a}</div>
+                <div style={{ padding: '12px 16px', fontSize: 16, color: c.pick==='B'?ACCENT:'rgba(255,255,255,.45)', fontWeight: c.pick==='B'?700:400, background: c.pick==='B'?ACCENT_SOFT:'rgba(255,255,255,.02)', border: `1px solid ${c.pick==='B'?ACCENT:'rgba(255,255,255,.08)'}`, borderLeft: 'none', borderTop: 'none', display: 'flex', alignItems: 'center' }}>{c.b}</div>
+                <div style={{ padding: '12px 16px', fontSize: 20, fontWeight: 700, color: c.pick==='B'?ACCENT:'rgba(255,255,255,.7)', borderBottom: '1px solid rgba(255,255,255,.08)', display: 'flex', alignItems: 'center' }}>{c.pick}</div>
               </div>
             </FadeUp>
           ))}
@@ -1136,7 +1136,7 @@ function Slide17() {
         <CodeLinesMini />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1200 }}>
           <Eyebrow>개발 · 리팩토링</Eyebrow>
-          <Headline size={52}>신한 특화 코드를 걷어내고 —<br/><span style={{ color: ACCENT }}>테넌트 중립 범용 구조</span>로 전환</Headline>
+          <Headline size={62}>신한 특화 코드를 걷어내고 —<br/><span style={{ color: ACCENT }}>테넌트 중립 범용 구조</span>로 전환</Headline>
         </div>
         <div style={{ position: 'absolute', top: 380, left: 88, right: 88 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
@@ -1144,11 +1144,11 @@ function Slide17() {
               <FadeUp key={i} delay={0.4 + i * 0.12}>
                 <div style={{ padding: '20px 20px', borderRadius: 10, border: `1px solid ${toneBd[it.tone]}`, background: toneBg[it.tone], display: 'flex', flexDirection: 'column', gap: 10, minHeight: 240 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: 18, fontWeight: 700, color: toneColor[it.tone] }}>{it.type}</span>
+                    <span style={{ fontSize: 22, fontWeight: 700, color: toneColor[it.tone] }}>{it.type}</span>
                     <Pill tone={i < 2 ? 'warn' : 'dim'}>{it.priority}</Pill>
                   </div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,.6)', lineHeight: 1.5, flex: 1 }}>{it.desc}</div>
-                  <div style={{ paddingTop: 10, borderTop: '1px solid rgba(255,255,255,.08)', fontSize: 12, color: toneColor[it.tone], fontWeight: 600 }}>{it.method}</div>
+                  <div style={{ fontSize: 15, color: 'rgba(255,255,255,.6)', lineHeight: 1.5, flex: 1 }}>{it.desc}</div>
+                  <div style={{ paddingTop: 10, borderTop: '1px solid rgba(255,255,255,.08)', fontSize: 14, color: toneColor[it.tone], fontWeight: 600 }}>{it.method}</div>
                 </div>
               </FadeUp>
             ))}
@@ -1203,18 +1203,18 @@ function Slide18() {
         <SlideTag num={18} label="데모 테넌트 & 핵심 기능" />
         <div style={{ position: 'absolute', top: 150, left: 88, right: 88 }}>
           <Eyebrow>데모 테넌트 · 시나리오</Eyebrow>
-          <Headline size={46}>실 서비스처럼 보이되 범위는 작게 —<br/><span style={{ color: ACCENT }}>4개 필수 여정 + 2개 보조 기능</span>으로 설득</Headline>
+          <Headline size={56}>실 서비스처럼 보이되 범위는 작게 —<br/><span style={{ color: ACCENT }}>4개 필수 여정 + 2개 보조 기능</span>으로 설득</Headline>
         </div>
         <div style={{ position: 'absolute', top: 370, left: 88, right: 88, display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 32 }}>
           <FadeUp delay={0.5}>
             <div>
-              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 12 }}>테넌트 구성</div>
+              <div style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 14 }}>테넌트 구성</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {tenant.map((t, i) => (
                   <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '11px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,.1)', background: 'rgba(255,255,255,.025)', gap: 8, alignItems: 'center' }}>
-                    <div style={{ fontSize: 14, fontWeight: 700 }}>{t.item}</div>
+                    <div style={{ fontSize: 17, fontWeight: 700 }}>{t.item}</div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
-                      <span style={{ fontSize: 12, color: 'rgba(255,255,255,.5)' }}>{t.how}</span>
+                      <span style={{ fontSize: 14, color: 'rgba(255,255,255,.5)' }}>{t.how}</span>
                       <Pill tone="green">{t.status}</Pill>
                     </div>
                   </div>
@@ -1224,11 +1224,11 @@ function Slide18() {
           </FadeUp>
           <FadeUp delay={0.7}>
             <div>
-              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 12 }}>핵심 기능 시나리오</div>
+              <div style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 14 }}>핵심 기능 시나리오</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {scenarios.map((s, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', borderRadius: 8, border: `1px solid ${s.tone==='green'?ACCENT:s.tone==='warn'?'rgba(255,164,43,.35)':'rgba(255,255,255,.1)'}`, background: s.tone==='green'?ACCENT_SOFT:s.tone==='warn'?'rgba(255,164,43,.05)':'rgba(255,255,255,.02)' }}>
-                    <span style={{ fontSize: 15, fontWeight: s.tone==='green'?700:500, color: s.tone==='dim'?'rgba(255,255,255,.45)':'#fff' }}>{s.name}</span>
+                    <span style={{ fontSize: 17, fontWeight: s.tone==='green'?700:500, color: s.tone==='dim'?'rgba(255,255,255,.45)':'#fff' }}>{s.name}</span>
                     <Pill tone={s.tone}>{s.priority}</Pill>
                   </div>
                 ))}
@@ -1263,19 +1263,19 @@ function Slide19() {
         <SlideTag num={19} label="사업 패키지 · 기대효과" />
         <div style={{ position: 'absolute', top: 150, left: 88, right: 88 }}>
           <Eyebrow>GTM · KPI</Eyebrow>
-          <Headline size={48}>컨설팅 논의에 바로 올릴 수 있는<br/><span style={{ color: ACCENT }}>상품 패키지와 기대효과 수치</span></Headline>
+          <Headline size={68}>컨설팅 논의에 바로 올릴 수 있는<br/><span style={{ color: ACCENT }}>상품 패키지와 기대효과 수치</span></Headline>
         </div>
         <div style={{ position: 'absolute', top: 370, left: 88, right: 88, display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 32 }}>
           <FadeUp delay={0.4}>
             <div>
-              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 12 }}>제안 패키지 구조</div>
+              <div style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 14 }}>제안 패키지 구조</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {pkgs.map((p, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 0, borderRadius: 8, border: `1px solid ${i===2?ACCENT:'rgba(255,255,255,.12)'}`, background: i===2?ACCENT_SOFT:'rgba(255,255,255,.025)', overflow: 'hidden' }}>
-                    <div style={{ width: 56, padding: '14px 12px', background: i===2?'rgba(30,215,96,.12)':'rgba(0,0,0,.2)', borderRight: `1px solid ${i===2?ACCENT:'rgba(255,255,255,.1)'}`, fontSize: 12, fontWeight: 700, color: i===2?ACCENT:'rgba(255,255,255,.45)', textAlign: 'center' }}>{p.dur}</div>
+                    <div style={{ width: 56, padding: '14px 12px', background: i===2?'rgba(30,215,96,.12)':'rgba(0,0,0,.2)', borderRight: `1px solid ${i===2?ACCENT:'rgba(255,255,255,.1)'}`, fontSize: 14, fontWeight: 700, color: i===2?ACCENT:'rgba(255,255,255,.45)', textAlign: 'center' }}>{p.dur}</div>
                     <div style={{ flex: 1, padding: '14px 16px' }}>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: i===2?ACCENT:'#fff', marginBottom: 3 }}>{p.name}</div>
-                      <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)' }}>{p.desc}</div>
+                      <div style={{ fontSize: 18, fontWeight: 700, color: i===2?ACCENT:'#fff', marginBottom: 3 }}>{p.name}</div>
+                      <div style={{ fontSize: 14, color: 'rgba(255,255,255,.5)' }}>{p.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -1284,13 +1284,13 @@ function Slide19() {
           </FadeUp>
           <FadeUp delay={0.6}>
             <div>
-              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 12 }}>목표 KPI (내부 가정)</div>
+              <div style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 14 }}>목표 KPI (내부 가정)</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr) 1fr', gap: 10 }}>
                 {kpis.map((k, i) => (
                   <div key={i} style={{ padding: '16px 16px', borderRadius: 10, border: `1px solid ${i<2?ACCENT:'rgba(255,255,255,.12)'}`, background: i<2?ACCENT_SOFT:'rgba(255,255,255,.025)', gridColumn: i===4?'span 3':'span 1' }}>
-                    <div style={{ fontSize: 28, fontWeight: 700, color: i<2?ACCENT:'#fff', lineHeight: 1, letterSpacing: '-0.02em' }}>{k.delta}</div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: i<2?ACCENT:'rgba(255,255,255,.8)', marginTop: 5, lineHeight: 1.3 }}>{k.label}</div>
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,.35)', marginTop: 4 }}>{k.base}</div>
+                    <div style={{ fontSize: 38, fontWeight: 700, color: i<2?ACCENT:'#fff', lineHeight: 1, letterSpacing: '-0.02em' }}>{k.delta}</div>
+                    <div style={{ fontSize: 15, fontWeight: 700, color: i<2?ACCENT:'rgba(255,255,255,.8)', marginTop: 5, lineHeight: 1.3 }}>{k.label}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,.35)', marginTop: 4 }}>{k.base}</div>
                   </div>
                 ))}
               </div>
@@ -1326,19 +1326,19 @@ function Slide20() {
         <SlideTag num={20} label="12주 실행 로드맵 · 리스크" />
         <div style={{ position: 'absolute', top: 150, left: 88, width: 1400 }}>
           <Eyebrow>실행 로드맵</Eyebrow>
-          <Headline size={50}>3개월 안에 <span style={{ color: ACCENT }}>바로 스타트 가능한 MVP</span>를 만들기 위한<br/>인력·리스크·Gate 관리</Headline>
+          <Headline size={60}>3개월 안에 <span style={{ color: ACCENT }}>바로 스타트 가능한 MVP</span>를 만들기 위한<br/>인력·리스크·Gate 관리</Headline>
         </div>
         <RoadmapProgress />
         <div style={{ position: 'absolute', top: 490, left: 88, right: 88, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 28 }}>
           <FadeUp delay={0.8}>
             <div>
-              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 12 }}>권장 투입 인력 (내부 가정)</div>
+              <div style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 14 }}>권장 투입 인력 (내부 가정)</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {staff.map((s, i) => (
                   <div key={i} style={{ display: 'grid', gridTemplateColumns: '180px 70px 1fr', alignItems: 'center', gap: 0, borderRadius: 7, border: '1px solid rgba(255,255,255,.1)', background: 'rgba(255,255,255,.025)', overflow: 'hidden' }}>
-                    <div style={{ padding: '10px 14px', fontSize: 14, fontWeight: 700 }}>{s.role}</div>
-                    <div style={{ padding: '10px 10px', borderLeft: `1px solid ${ACCENT}`, background: ACCENT_SOFT, fontSize: 13, fontWeight: 700, color: ACCENT, textAlign: 'center' }}>{s.fte}</div>
-                    <div style={{ padding: '10px 14px', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 12, color: 'rgba(255,255,255,.55)' }}>{s.resp}</div>
+                    <div style={{ padding: '10px 14px', fontSize: 17, fontWeight: 700 }}>{s.role}</div>
+                    <div style={{ padding: '10px 10px', borderLeft: `1px solid ${ACCENT}`, background: ACCENT_SOFT, fontSize: 15, fontWeight: 700, color: ACCENT, textAlign: 'center' }}>{s.fte}</div>
+                    <div style={{ padding: '10px 14px', borderLeft: '1px solid rgba(255,255,255,.1)', fontSize: 14, color: 'rgba(255,255,255,.55)' }}>{s.resp}</div>
                   </div>
                 ))}
               </div>
@@ -1346,7 +1346,7 @@ function Slide20() {
           </FadeUp>
           <FadeUp delay={1.0}>
             <div>
-              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 12 }}>핵심 리스크와 대응</div>
+              <div style={{ fontSize: 13, letterSpacing: '0.22em', textTransform: 'uppercase', color: ACCENT, fontWeight: 700, marginBottom: 14 }}>핵심 리스크와 대응</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {risks.map((r, i) => {
                   const levelColor = r.level==='high'?'rgba(255,80,80,.6)':r.level==='mid'?'#ffa42b':'rgba(255,255,255,.4)';
@@ -1355,8 +1355,8 @@ function Slide20() {
                     <div key={i} style={{ padding: '12px 14px', borderRadius: 8, border: `1px solid ${levelBd}`, background: 'rgba(255,255,255,.02)', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                       <span style={{ fontSize: 12, fontWeight: 700, color: levelColor, letterSpacing: '0.12em', flexShrink: 0, marginTop: 1 }}>{r.id}</span>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: '#fff', marginBottom: 4 }}>{r.desc}</div>
-                        <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)' }}>{r.action}</div>
+                        <div style={{ fontSize: 17, fontWeight: 600, color: '#fff', marginBottom: 4 }}>{r.desc}</div>
+                        <div style={{ fontSize: 14, color: 'rgba(255,255,255,.5)' }}>{r.action}</div>
                       </div>
                       <span style={{ width: 8, height: 8, borderRadius: '50%', background: levelColor, flexShrink: 0, marginTop: 4 }} />
                     </div>
@@ -1387,7 +1387,7 @@ function RoadmapProgress() {
             <div key={i} style={{ opacity: visible?1:0.3 }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                 <span style={{ width: 8, height: 8, borderRadius: '50%', background: visible?ACCENT:'rgba(255,255,255,.3)', flexShrink: 0 }} />
-                <span style={{ fontSize: 11, color: visible?ACCENT:'rgba(255,255,255,.4)', fontWeight: 700, letterSpacing: '0.06em' }}>{p}</span>
+                <span style={{ fontSize: 13, color: visible?ACCENT:'rgba(255,255,255,.4)', fontWeight: 700, letterSpacing: '0.06em' }}>{p}</span>
               </span>
             </div>
           );
